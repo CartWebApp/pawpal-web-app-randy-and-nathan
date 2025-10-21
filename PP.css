@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap');
+
+
+.hero img {
+position: relative
+}
+
+.pixelify-sans-font {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+ html,body {
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-optical-sizing: auto;
+  }
+
+  .welcome {
+    background-image: url(Images/image\ 4.png);
+    background-size: cover;                 
+    background-repeat: no-repeat;           
+    background-position: center center;     
+    height: 100vh;                           
+    margin: 0;                              
+    color: white;  
+  }
+
+  .home {
+    background-image: url(images/image\ 5.png);
+    background-position-y: 175px;
+  }
+
+  .privacy {
+   background-image: url(Images/image\ 12.png) url(images/image\ 13.png);
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    size: 500px
+  }
+
+  .navbar {
+    background-image: url(Images/navbar.png);
+    background-position: center center;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+
+  .dropdown-content {
+    position: fixed;
+    top: 40%;
+    right: -250px; 
+    width: 250px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px 0 0 10px;
+    padding: 15px;
+    transition: right 0.3s ease;
+  }
+
+
+  .widget-tab:hover + .dropdown-content,
+  .dropdown-content:hover {
+    right: 0;
+  }
+
+  .info {
+    background-image: url(Images/pixil-frame-0\ \(9\)\ 1.png);
+  }
+
+  .about {
+    background-image: url(Images/image\ 17.png);
+  }
