@@ -32,10 +32,12 @@ position: relative
   .home {
     background-image: url(images/image\ 5.png);
     background-position-y: 175px;
+    
   }
 
   .privacy {
    background-image: url(Images/image\ 12.png) url(images/image\ 13.png);
+
   }
 
   h1 {
