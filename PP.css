@@ -99,7 +99,6 @@ align-items: flex-end;
  .FAQ {
   background-image: url(Images/pixil-frame-0\ \(9\)\ 1.png);
  }
-
  
 .new-pet-page {
   display: flex;
@@ -108,6 +107,10 @@ align-items: flex-end;
   margin-top: 10%;
   gap: 20px;
   text-align: center;
+}
+
+.new{
+background-image: url(images/image\ 5.png);
 }
 
 .new-pet-page input,
