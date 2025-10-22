@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap');
 
 
-.hero img {
-position: relative
+.hero {
+display: flex;
+justify-content: center;
+align-items: flex-end;
 }
 
 .pixelify-sans-font {
@@ -88,3 +90,53 @@ position: relative
   .about {
     background-image: url(Images/image\ 17.png);
   }
+
+ .about, h1 {
+  display: flex;
+  justify-content: flex-end;
+ }
+
+ .FAQ {
+  background-image: url(Images/pixil-frame-0\ \(9\)\ 1.png);
+ }
+
+ 
+.new-pet-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  gap: 20px;
+  text-align: center;
+}
+
+.new-pet-page input,
+.new-pet-page select {
+  background: #e6e6e6;
+  color: #000;
+  border: 3px solid #000;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-family: "Pixelify Sans", sans-serif;
+  border-radius: 6px;
+  width: 200px;
+  text-align: center;
+  image-rendering: pixelated;
+}
+
+.new-pet-page .make-pet-btn {
+  background: #bcbcbc;
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 16px;
+  font-family: "Pixelify Sans", sans-serif;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.new-pet-page .make-pet-btn:hover {
+  background: #d6d6d6;
+  transform: scale(1.05);
+}
