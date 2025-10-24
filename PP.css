@@ -50,7 +50,7 @@ align-items: flex-end;
   }
 
   .navbar {
-    background-image: url(Images/navbar.png);
+    background-image: url(Images/pixil-frame-0\ \(15\).png);
     background-position: center center;
 }
 
@@ -97,6 +97,7 @@ align-items: flex-end;
  }
 
 .help-page {
+  background-image: url(images/image\ 12.png);
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
@@ -106,6 +107,10 @@ align-items: flex-end;
   width: 80vw;
   max-width: 900px;
   text-align: center;
+}
+
+.faq {
+  background-image: url(Images/pixil-frame-0\ \(10\).png);
 }
 
 .faq-frame {
