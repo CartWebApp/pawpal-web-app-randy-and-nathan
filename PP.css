@@ -32,22 +32,24 @@ align-items: flex-end;
     margin: 0;
   }
 
-  body.welcome, 
-  body.sign-in, 
-  body.sign-up, 
-  body.code-confirmed {
+  body.welcome,
+  body.sign-in,
+  body.sign-up,
+  body.confirmed {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(Images/image\ 4.png);
+    justify-content: center;
+    background-image: url("Images/image 4.png");
     background-size: cover;                 
     background-repeat: no-repeat;   
     background-attachment: fixed;
     background-position: center center;    
     min-height: 140vh;                           
-    margin: 0;                              
+    margin: 0;                   
     color: white; 
   }
+  
 
 .buttons {
   display: flex;
@@ -57,18 +59,20 @@ align-items: flex-end;
 }
 
 
-  .sign-in h1 {
-    font-size: 96px;
-    text-align: center;
-  }
-  .welcome h1{
+
+  .welcome h1,
+  .sign-in h1,
+  .sign-up h1{
     font-size: 96px;
     text-align: center;
   }
   
-  .welcome, .sign-in, .sign-up p {
+  .welcome p,
+  .sign-in p,
+  .sign-up p {
     font-size: 20px;
   }
+  
 
 .welcome button {
   all: unset; 
@@ -80,7 +84,6 @@ align-items: flex-end;
   background-color: #5e5e5e;
   color: white;
   font-size: 30px;
-  text-align: flex-end;
   border-radius: 10px;
   cursor: pointer;
   box-sizing: border-box;
@@ -94,21 +97,23 @@ align-items: flex-end;
    height: 98px;
  }
 
- .sign-in, .sign-up input {
+ .sign-in input, 
+ .sign-up input {
   width: 452px;
   height: 79px;
   font-size: 24px;
   gap: 20px;
  }
 
-.sign-in, .sign-up label {
-  align-self: flex-start; 
-  margin-left: 400px; 
+.sign-in label,
+.sign-up label {
+  margin-right: 350px;
   font-size: 18px;
   color: white;
 }
 
-.sign-in, .sign-up button {
+.sign-in button,
+.sign-up button {
   position: relative;
   display: flex;
   justify-content: center;
@@ -120,9 +125,27 @@ align-items: flex-end;
   font-size: 40px;
   background-color: #909090;
   margin-top: 10px;
-
 }
 
+.code-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.code-inputs input {
+  width: 76px;
+  height: 124px;
+  border: none;
+  font-size: 106px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
   .home {
     background-image: url(images/image\ 5.png);
     background-position-y: 175px;
@@ -366,15 +389,14 @@ width:100%;
   border: none;
   background-color: red;
   color: white;
-
 }
+
 body.log {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(images/image\ 13.png);
-
 }
 
 .log button {
@@ -382,7 +404,6 @@ body.log {
   border: none;
   background-color: red;
   color: white;
-
 }
 
 .hero-settings{
@@ -393,7 +414,6 @@ body.log {
   display:flex;
   flex-direction:column;
   align-items:center;
- 
   background-repeat: no-repeat;
   flex-wrap: wrap;
 }
@@ -402,11 +422,11 @@ body.log {
   display:flex;
   color:white;
   flex-direction:column;
-justify-content:flex-end;
+  justify-content:flex-end;
   background-color: red;
-border-radius: 10%;
-width:auto;
-height:max-content
+  border-radius: 10%;
+  width:auto;
+  height:max-content
 }
 
 .backhome{
