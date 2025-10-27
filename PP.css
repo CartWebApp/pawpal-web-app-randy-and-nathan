@@ -418,20 +418,66 @@ body.log {
   flex-wrap: wrap;
 }
 
+
+
 .logout {
   display:flex;
-  color:white;
   flex-direction:column;
   justify-content:flex-end;
   background-color: red;
   border-radius: 10%;
   width:auto;
-  height:max-content
+height:max-content;
+ border-radius: 10%;
+ width:auto;
+ height:max-content;
+ align-items:center;
+ padding:50px;
+}
+
+.logouttext {
+  display:flex;
+  font-size: 70px;
+  flex-direction:column;
+ justify-content:flex-end;
+ border-radius: 10%;
+  color:white;
+  background-color: red;
+  padding-left: 400px;
+  padding-right:400px;
 }
 
 .backhome{
- background-image: url(Images/desc.png);
+  display:flex;
+  align-items:center;
+  padding-left:30px;
+ background-image: url(Images/back.png);
+ min-height: 100px;
+ font-size: 60px;
+ background-repeat:no-repeat;
+ padding-top:10px
 }
+
+.accountsetting, 
+.aboutsetting, 
+.feedback, 
+.policy, 
+ .help{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background-image: url(Images/pixil-frame-0\ \(15\).png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-wrap: wrap;
+  font-size: 50px;
+  border-radius: 10%;
+  background-position: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
 
 .needs{
   display:flex;
@@ -439,4 +485,3 @@ body.log {
   align-items:center;
   justify-content: space-between;
 }
-
