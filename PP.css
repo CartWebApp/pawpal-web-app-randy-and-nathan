@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap');
 
+a {
+  text-decoration: none;
+  color:black ;
+}
+
+a.hover {
+  color:white;
+  transition: 0.3s ease;
+}
 
 .hero {
 display: flex;
@@ -122,7 +131,7 @@ align-items: flex-end;
 
   .privacy {
    background-image: url(Images/image\ 12.png) url(images/image\ 13.png);
-
+background-repeat: no-repeat;
   }
 
   h1 {
@@ -375,3 +384,39 @@ body.log {
   color: white;
 
 }
+
+.hero-settings{
+  background-image: url(Images/image\ 17.png);
+}
+
+.settings-continued {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+ 
+  background-repeat: no-repeat;
+  flex-wrap: wrap;
+}
+
+.logout {
+  display:flex;
+  color:white;
+  flex-direction:column;
+justify-content:flex-end;
+  background-color: red;
+border-radius: 10%;
+width:auto;
+height:max-content
+}
+
+.backhome{
+ background-image: url(Images/desc.png);
+}
+
+.needs{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-between;
+}
+
