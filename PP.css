@@ -13,23 +13,106 @@ align-items: flex-end;
     font-weight: 500;
     font-style: normal;
   }
-
- html,body {
+  
+  html,body {
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-optical-sizing: auto;
+    height: 100%;
+    margin: 0;
   }
 
-  .welcome {
+  body.welcome, 
+  body.sign-in, 
+  body.sign-up, 
+  body.code-confirmed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url(Images/image\ 4.png);
     background-size: cover;                 
-    background-repeat: no-repeat;           
-    background-position: center center;     
-    height: 100vh;                           
+    background-repeat: no-repeat;   
+    background-attachment: fixed;
+    background-position: center center;    
+    min-height: 140vh;                           
     margin: 0;                              
-    color: white;  
+    color: white; 
   }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+  .sign-in h1 {
+    font-size: 96px;
+    text-align: center;
+  }
+  .welcome h1{
+    font-size: 96px;
+    text-align: center;
+  }
+  
+  .welcome, .sign-in, .sign-up p {
+    font-size: 20px;
+  }
+
+.welcome button {
+  all: unset; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 470px;
+  height: 105px;
+  background-color: #5e5e5e;
+  color: white;
+  font-size: 30px;
+  text-align: flex-end;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+
+
+
+ .welcome img:nth-child(1) {
+   width: 470px;
+   height: 98px;
+ }
+
+ .sign-in, .sign-up input {
+  width: 452px;
+  height: 79px;
+  font-size: 24px;
+  gap: 20px;
+ }
+
+.sign-in, .sign-up label {
+  align-self: flex-start; 
+  margin-left: 400px; 
+  font-size: 18px;
+  color: white;
+}
+
+.sign-in, .sign-up button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 100px;
+  width: 531px;
+  height: 145px;
+  font-size: 40px;
+  background-color: #909090;
+  margin-top: 10px;
+
+}
 
   .home {
     background-image: url(images/image\ 5.png);
@@ -97,6 +180,7 @@ align-items: flex-end;
   display: flex;
   justify-content: flex-end;
  }
+
 
 .help-page {
   background-image: url(images/image\ 12.png);
