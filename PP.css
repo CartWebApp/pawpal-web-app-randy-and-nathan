@@ -485,3 +485,10 @@ height:max-content;
   align-items:center;
   justify-content: space-between;
 }
+
+button {
+  width: 90%;         
+  max-width: 470px;   
+  height: clamp(60px, 10vw, 105px);
+  font-size: clamp(16px, 3vw, 30px);
+}
