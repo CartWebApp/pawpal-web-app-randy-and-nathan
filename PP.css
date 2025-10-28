@@ -165,6 +165,7 @@ background-repeat: no-repeat;
   }
 
   .navbar {
+    position: relative;
     background-image: url(Images/navbar.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -181,24 +182,160 @@ background-repeat: no-repeat;
   }
 
 
-  .dropdown-content {
-    position: fixed;
-    top: 40%;
-    right: -250px; 
-    width: 250px;
-    background: #fff;
-    color: #333;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    border-radius: 10px 0 0 10px;
-    padding: 15px;
-    transition: right 0.3s ease;
-  }
+.menu-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  width: 60px;
+  height: 60px;
+}
+
+.menu-button img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
 
 
-  .widget-tab:hover + .dropdown-content,
-  .dropdown-content:hover {
-    right: 0;
-  }
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0; 
+  width: 474.07px;
+  height: 931px;
+  background-image: url("Images/Setting-image.png");
+  background-size: 100% 100%;      
+  background-repeat: no-repeat;
+  image-rendering: pixelated;        
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: right 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.overlay.show {
+  right: 0;
+}
+
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 80%;
+  align-items: center;
+}
+
+.overlay-item {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.overlay-item:hover {
+  transform: scale(1.1);
+  color: #9ab0ff; 
+}
+
+
+.settings {
+  position: relative;
+}
+
+.gear-icon {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gear-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.overlay-menu {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 250px;
+  background-image: url("Images/Setting-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 3px solid #2b2bff;
+  border-radius: 12px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  padding: 20px 0;
+  image-rendering: pixelated;
+}
+
+.settings:hover .overlay-menu {
+  display: flex;
+  animation: slideIn 0.25s ease-in-out;
+}
+
+
+.overlay-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+}
+
+.logout-section {
+  width: 80%;
+  margin-top: 15px;
+}
+
+.logout-btn {
+  display: block;
+  text-align: center;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 14px;
+  text-decoration: none;
+  font-family: "Pixelify Sans", sans-serif;
+  text-transform: lowercase;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: "Pixelify Sans", sans-serif;
+}
 
   .info {
     background-image: url(Images/pixil-frame-0\ \(9\)\ 1.png);
@@ -384,8 +521,8 @@ body.account h1 {
 
 
 .logout button {
-width:100%;
- padding: 70px;
+  width:100%;
+  padding: 70px;
   border: none;
   background-color: red;
   color: white;
@@ -417,7 +554,6 @@ body.log {
   background-repeat: no-repeat;
   flex-wrap: wrap;
 }
-
 
 
 .logout {
