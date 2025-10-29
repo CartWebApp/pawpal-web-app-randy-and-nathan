@@ -23,13 +23,15 @@ align-items: flex-end;
     font-style: normal;
   }
   
-  html,body {
+  html, body {
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-optical-sizing: auto;
     height: 100%;
+    width: 100%;
     margin: 0;
+    padding: 0;
   }
 
   body.welcome,
@@ -60,21 +62,21 @@ align-items: flex-end;
 
 
 
-  .welcome h1,
-  .sign-in h1,
-  .sign-up h1{
+  body.welcome h1,
+  body.sign-in h1,
+  body.sign-up h1{
     font-size: 96px;
     text-align: center;
   }
   
-  .welcome p,
-  .sign-in p,
-  .sign-up p {
+  body.welcome p,
+  body.sign-in p,
+  body.sign-up p {
     font-size: 20px;
   }
   
 
-.welcome button {
+body.welcome button {
   all: unset; 
   display: flex; 
   justify-content: center;
@@ -97,23 +99,23 @@ align-items: flex-end;
    height: 98px;
  }
 
- .sign-in input, 
- .sign-up input {
+ body.sign-in input, 
+ body.sign-up input {
   width: 452px;
   height: 79px;
   font-size: 24px;
   gap: 20px;
  }
 
-.sign-in label,
-.sign-up label {
+body.sign-in label,
+body.sign-up label {
   margin-right: 350px;
   font-size: 18px;
   color: white;
 }
 
-.sign-in button,
-.sign-up button {
+body.sign-in button,
+body.sign-up button {
   position: relative;
   display: flex;
   justify-content: center;
@@ -199,40 +201,28 @@ background-repeat: no-repeat;
   height: auto;
   image-rendering: pixelated;
 }
-  .dropdown-content {
-    position: fixed;
-    top: 40%;
-    right: -250px; 
-    width: 250px;
-    background: #fff;
-    color: #333;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    border-radius: 10px 0 0 10px;
-    padding: 15px;
-    transition: right 0.3s ease;
-  }
+
 
 
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0; 
-  width: 474.07px;
-  height: 931px;
+  right: 0;
+  width: 474px;
+  height: 910px;
   background-image: url("Images/Setting-image.png");
-  background-size: 100% 100%;      
+  background-size: cover;
   background-repeat: no-repeat;
-  image-rendering: pixelated;        
+  image-rendering: pixelated;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
+  z-index: 9999;
   transition: right 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 
 .overlay.show {
   right: 0;
@@ -263,20 +253,12 @@ background-repeat: no-repeat;
 }
 
 
-.settings {
-  position: relative;
-}
-
 .gear-icon {
-  width: 60px;
+  width: 199px;
   height: auto;
   cursor: pointer;
   image-rendering: pixelated;
   transition: transform 0.2s ease-in-out;
-}
-
-.gear-icon:hover {
-  transform: scale(1.1);
 }
 
 
@@ -285,7 +267,6 @@ background-repeat: no-repeat;
   top: 80px;
   right: 0;
   width: 250px;
-  background-image: url("Images/Setting-image.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -319,6 +300,7 @@ background-repeat: no-repeat;
 }
 
 .logout-btn {
+  position: absolute;
   display: block;
   text-align: center;
   background-color: red;
@@ -488,14 +470,6 @@ hr {
 }
 
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
 body.account {
   display: flex;
   flex-direction: column;
@@ -650,4 +624,42 @@ button {
   max-width: 470px;   
   height: clamp(60px, 10vw, 105px);
   font-size: clamp(16px, 3vw, 30px);
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  button {
+    width: 90%;
+    height: auto;
+    font-size: clamp(16px, 4vw, 24px);
+  }
+
+  .gear-icon {
+    width: 80px;
+  }
+
+  .overlay {
+    width: 100%;
+    right: -100%;
+  }
+
+  .overlay.show {
+    right: 0;
+  }
+
+  h1 {
+    font-size: clamp(28px, 8vw, 64px);
+  }
 }

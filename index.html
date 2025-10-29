@@ -1,80 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="PP.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <title>Wellnesti-Home</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="PP.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <title>Wellnesti - Home</title>
 </head>
+
 <body class="home">
-    <header>
-        <nav class="navbar">
-            <ul class="list"> 
+  <header>
+    <nav class="navbar">
+      <ul class="list">
+        <li class="newpet"><a href="add.new.html"><img src="Images/image 6.png"></a></li>
+        <li class="activity"><a href="activities.html"><img src="Images/ball.png"></a></li>
+        <li class="special"><a href="special.needs.html"><img src="images/pill.png"></a></li>
+        <li class="stats"><a href="stats.html"><img src="images/stats.png"></a></li>
 
-                <li class="newpet"><a href="add.new.html"><img src="Images/image 6.png"></a></li>
+        <li class="settings">
+          <img src="images/Gear.png" class="gear-icon" alt="Settings">
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-                <li class="activity"><a href="activities.html"><img src="Images/ball.png"></a></li>
+  <section id="dialogue/notif">
+    <p>Click on one of the nav buttons to track my needs!</p>
+  </section>
 
-                <li class="special"><a href="special.needs.html"><img src="images/pill.png"></a></li>
+  <section class="hero">
+    <img class="pet" src="Images/image 7.png" alt="Your pet Here">
+  </section>
 
-                <li class="stats"><a href="stats.html"><img src="images/stats.png"></a></li>
 
-                <li class="settings">
-                    <img src="images/Gear.png" class="gear-icon" alt="Settings">
-                    <div class="overlay-menu">
-                      <div class="overlay-buttons">
-                        <a href="account.html" class="overlay-item">account</a>
-                        <a href="settings.html" class="overlay-item">settings</a>
-                        <a href="about.html" class="overlay-item">about</a>
-                        <a href="feedback.html" class="overlay-item">support / feedback</a>
-                        <a href="privacy.html" class="overlay-item">privacy policy</a>
-                        <a href="help.html" class="overlay-item">help</a>
-                        <a href="#" class="overlay-item">turn off notifications</a>
-                      </div>
-                      <div class="logout-section">
-                        <a href="logout.html" class="logout-btn">log out</a>
-                      </div>
-                    </div>
-                  </li>
-
-                <li class="settings"><a href="settings.html" class="overlay"><img src="images/Gear.png"></a></li>
-
-             </ul>
-        </nav>
-    </header>
-    <section id="dialogue/notif">
-        <p>Click on one of the nav buttons to track my needs!</p>
-    </section>
-    <section class="hero">
-        <img class="pet"src="Images/image 7.png" alt="Your pet Here">
-    </section>
-        
-
-<div class="menu-button" onclick="toggleOverlay()">
-    <img src="Images/pixil-frame-0 (9) 1.png" alt="Menu Icon">
+  <ul class="overlay" id="settingsOverlay">
+    <ul class="overlay-content">
+      <li href="account.html" class="overlay-item">Account</li>
+      <li href="settings.html" class="overlay-item">Settings</li>
+      <li href="about.html" class="overlay-item">About</li>
+      <li href="feedback.html" class="overlay-item">Support / Feedback</li>
+      <li href="privacy.html" class="overlay-item">Privacy Policy</li>
+      <li href="help.html" class="overlay-item">Help</li>
+      <li href="#" class="overlay-item">Turn off Notifications</li>
+      <li href="logout.html" class="logout-btn">Log Out</li>
+    </ul>
   </div>
-  
 
-  <div id="settings-overlay" class="overlay">
-    <div class="overlay-content">
-      <button class="overlay-item">Account</button>
-      <button class="overlay-item">Settings</button>
-      <button class="overlay-item">About</button>
-      <button class="overlay-item">Support / Feedback</button>
-      <button class="overlay-item">Privacy Policy</button>
-      <button class="overlay-item">Help</button>
-      <button class="overlay-item">Turn off Notifications</button>
-  
-      <button class="logout-btn">Log Out</button>
-    </div>
-  </div>
-  
-    <footer>
-        <img src="pixil-frame-0(3) 3.png">
-        <a link="pet.selection">
-        </footer>
+  <footer>
+    <img src="pixil-frame-0(3) 3.png" alt="Footer Icon">
+  </footer>
+  <script src="Pal.js" defer></script>
 </body>
 </html>

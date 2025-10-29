@@ -5,19 +5,23 @@ createUserWithEmailAndPassword(auth, email, password)
   .catch((error) => console.error(error.message));
 
 
-function toggleOverlay() {
-  const overlay = document.getElementById("settings-overlay");
-  overlay.classList.toggle("show");
-}
 
-// Optional: close overlay when clicking outside
-window.addEventListener("click", (event) => {
-  const overlay = document.getElementById("settings-overlay");
-  if (!event.target.closest(".overlay") && !event.target.closest(".menu-button")) {
+const gearIcon = document.querySelector(".gear-icon");
+const overlay = document.querySelector(".overlay");
+
+
+gearIcon.addEventListener("click", () => {
+  overlay.classList.toggle("show");
+});
+
+document.addEventListener("click", (e) => {
+  if (!overlay.contains(e.target) && !gearIcon.contains(e.target)) {
     overlay.classList.remove("show");
   }
 });
 
+gearIcon.addEventListener("mouseenter", () => overlay.classList.add("show"));
+overlay.addEventListener("mouseleave", () => overlay.classList.remove("show"));
 
 
   
