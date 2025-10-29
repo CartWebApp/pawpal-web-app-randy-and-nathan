@@ -332,8 +332,14 @@ background-repeat: no-repeat;
   font-family: "Pixelify Sans", sans-serif;
 }
 
+.info-position {
+  display:flex;
+  justify-content
+}
   .info {
-    background-image: url(Images/pixil-frame-0\ \(9\)\ 1.png);
+    display:flex;
+    flex
+    background-image: url(images/desc.png);
   }
 
   .about {
@@ -342,7 +348,6 @@ background-repeat: no-repeat;
 
  .about, h1 {
   display: flex;
-  justify-content: flex-end;
  }
 
 
