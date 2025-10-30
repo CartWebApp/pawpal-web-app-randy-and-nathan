@@ -16,6 +16,11 @@ justify-content: center;
 align-items: flex-end;
 }
 
+p {
+  display:flex;
+  flex-direction:row;
+}
+
 .pixelify-sans-font {
     font-family: "Pixelify Sans", sans-serif;
     font-optical-sizing: auto;
@@ -331,22 +336,44 @@ background-repeat: no-repeat;
   margin-top: 30px;
   font-family: "Pixelify Sans", sans-serif;
 }
-
-.info-position {
-  display:flex;
-  justify-content
-}
   .info {
     display:flex;
-    flex
     background-image: url(images/desc.png);
+    background-position: center;
+background-repeat: no-repeat;
+  }
+
+.history {
+  display:flex;
+  background-image: url(Images/desc.png);
+  background-repeat: no-repeat;
+  background-position: center;
+font-size: x-large;
+flex-direction: row;
+flex-wrap: wrap;
+padding:150px
+}
+
+.aboutus {
+  display:flex;
+   background-image: url(Images/back.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   padding: 50px;
+}
+
+  .about-backout {
+display:flex;
   }
 
   .about {
+    display:flex;
     background-image: url(Images/image\ 17.png);
+    flex-direction:row;
+    justify-content: center;
   }
 
- .about, h1 {
+h1 {
   display: flex;
  }
 
@@ -499,14 +526,6 @@ img {
   display: block;
 }
 
-.info{
-  height: 125px;
-  width: 125px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 body.account h1 {
   display: flex;
   justify-self: flex-end;
@@ -598,8 +617,6 @@ height:max-content;
 
 .accountsetting, 
 .aboutsetting, 
-.feedback, 
-.policy, 
  .help{
   display:flex;
   flex-direction:column;
@@ -615,7 +632,38 @@ height:max-content;
   padding-bottom: 100px;
 }
 
+.Policy {
+  display:flex;
+background-image: url(Images/image\ 17.png);
+}
 
+.backout {
+  background-image: url(Images/back.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 200px;
+  font-size: xx-large;
+}
+
+.done-reading{
+  display:flex;
+align-items: center;
+justify-content: center;
+background-color: powderblue;
+font-size: larger;
+color: rgb(82, 107, 233);
+border-radius: 10px;
+font-size: xx-large;
+width:300px;
+}
+
+.info {
+  display:flex;
+  font-size: large;
+padding: 125px;
+flex-wrap:wrap;
+justify-content: center;
+}
 
 .needs{
   display:flex;
@@ -624,11 +672,35 @@ height:max-content;
   justify-content: space-between;
 }
 
-button {
-  width: 90%;         
-  max-width: 470px;   
-  height: clamp(60px, 10vw, 105px);
-  font-size: clamp(16px, 3vw, 30px);
+.namechange,
+.picturechange,
+.passwordchange {
+display:flex;
+justify-content: center;
+background-image: url(Images/back.png);
+background-position: center;
+background-repeat: no-repeat;
+padding:45px;
+}
+
+.Feedback {
+  display:flex;
+background-image: url(Images/image\ 17.png);
+}
+
+.feedbackinfo {
+  display:flex;
+  flex-direction:row;
+  background-image: url(Images/desc.png);
+  background-position: center;
+background-size: contain;
+background-repeat: no-repeat;
+padding:240px;
+}
+
+.text-position {
+display:flex;
+justify-content:center;
 }
 
 @media (max-width: 768px) {
