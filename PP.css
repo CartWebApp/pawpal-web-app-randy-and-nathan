@@ -211,23 +211,18 @@ background-repeat: no-repeat;
 
 /* setting widget start */
 .overlay {
+  display:flex;
+flex-direction:column;
+  align-items: flex-start;
+  justify-content:center;
   position: fixed;
   top: 0;
   right: 0;
-  width: 474.07px;
-  height: 931px;
+  width: 250px;
+  height: 700px;
   background-image: url("Images/Setting-image.png");
   background-size: cover;
   background-repeat: no-repeat;
-  image-rendering: pixelated;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
-  z-index: 9999;
-  transition: right 0.4s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 40px;
 }
 
 .overlay.show {
@@ -238,22 +233,19 @@ background-repeat: no-repeat;
 .overlay-content {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  width: 80%;
-  align-items: center;
+gap:40px;
+width:100%;
 }
+
 
 .overlay-item {
   display: flex;
-  text-align:center;
-  justify-content: space-around;
   color: rgb(0, 0, 0);
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   text-transform: lowercase;
-  transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
-  gap: 00px;
+  transition: 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
 
@@ -262,78 +254,32 @@ background-repeat: no-repeat;
   height: auto;
   cursor: pointer;
   image-rendering: pixelated;
-  transition: transform 0.2s ease-in-out;
-}
-
-
-.overlay-menu {
-  position: absolute;
-  top: 80px;
-  right: 0;
-  width: 250px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 3px solid #2b2bff;
-  border-radius: 12px;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  z-index: 999;
-  padding: 20px 0;
-  image-rendering: pixelated;
+  transition:0.2s ease-in-out;
 }
 
 .settings:hover .overlay-menu {
   display: flex;
-  animation: slideIn 0.25s ease-in-out;
-}
-
-
-.overlay-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 80%;
-}
-
-.logout-section {
-  width: 80%;
-  margin-top: 15px;
+  animation: 0.25s ease-in-out;
 }
 
 .logout-btn {
-  position: absolute;
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   background-color: red;
   color: white;
   border-radius: 10px;
-  font-size: 18px;
-  padding: 14px;
+  font-size: 20px;
+  padding: 20px;
   text-decoration: none;
   font-family: "Pixelify Sans", sans-serif;
   text-transform: lowercase;
+  width:100%;
+  cursor: pointer;
 }
 
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-
-.logout-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-  font-size: 22px;
-  cursor: pointer;
-  margin-top: 30px;
-  font-family: "Pixelify Sans", sans-serif;
 }
 
 /* settings widget end */
