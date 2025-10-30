@@ -153,10 +153,12 @@ footer {
   justify-content: center;
   align-items: flex-end;
 }
-  .home {
+  body.home,
+  body.pets {
     background-image: url(images/image\ 5.png);
-    background-position-y: 175px;
-    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   .privacy {
@@ -168,7 +170,7 @@ background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    size: 500px
+    size: 500px;
   }
 
   .navbar {
@@ -207,7 +209,17 @@ background-repeat: no-repeat;
   image-rendering: pixelated;
 }
 
+.view-all-pets {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
 
+.pets ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
 
 /* setting widget start */
 .overlay {
@@ -220,6 +232,9 @@ flex-direction:column;
   right: 0;
   width: 250px;
   height: 700px;
+  right: -474.07px;
+  width: 474.07px;
+  height: 931px;
   background-image: url("Images/Setting-image.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -246,7 +261,7 @@ width:100%;
   text-decoration: none;
   text-transform: lowercase;
   transition: 0.1s ease-in-out, color 0.1s ease-in-out;
-}
+  transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
 
 
 .gear-icon {
