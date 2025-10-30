@@ -167,22 +167,115 @@ background-repeat: no-repeat;
   }
 
   .navbar {
+    overflow: visible;
     position: relative;
     background-image: url(Images/navbar.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index:100;
 }
 
 .navbar ul {
+  overflow: visible;
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
+    z-index: 100;
   }
 
+    .stats {
+      position: relative;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    .stats-icon {
+      width: 101px;
+      height: 121px;
+      transition: transform 0.3s ease;
+    }
+
+    .stats-icon:hover {
+      transform: scale(1.1);
+    }
+
+  .stats-overlay {
+  position: absolute;
+  top: calc(100% + 8px); 
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+  width: 320px;
+  display: none; 
+  z-index: 9999; 
+  transform-origin: top right;
+}
+
+    .stats.active .stats-overlay {
+      display: block;
+      animation: fadeIn 240ms ease;
+    }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Graph Styles */
+    .graph {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .bar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bar {
+      width: 40px;
+      background: linear-gradient(to top, #ff9f43, #ff6b6b);
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      color: white;
+      font-weight: bold;
+      transition: height 0.3s ease;
+    }
+
+      .label {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 13px;
+    }
+
+
+    .bar:hover {
+      background: linear-gradient(to top, #ffa94d, #ff8787);
+    }
+
+    .label {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .bar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
 .menu-button {
   position: fixed;
@@ -208,8 +301,8 @@ background-repeat: no-repeat;
 .overlay {
   position: fixed;
   top: 0;
-  right: 0;
-  width: 474px;
+  right: -474.07px;;
+  width: 474.07px;
   height: 910px;
   background-image: url("Images/Setting-image.png");
   background-size: cover;
@@ -220,8 +313,9 @@ background-repeat: no-repeat;
   transition: right 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+
 }
 
 .overlay.show {
@@ -245,6 +339,7 @@ background-repeat: no-repeat;
   text-decoration: none;
   text-transform: lowercase;
   transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
+  justify-content: space-around;
 }
 
 .overlay-item:hover {
@@ -334,13 +429,14 @@ background-repeat: no-repeat;
 
 .info-position {
   display:flex;
-  justify-content
+  justify-content: center;
 }
   .info {
-    display:flex;
-    flex
+
+    display: flex;
     background-image: url(images/desc.png);
   }
+  
 
   .about {
     background-image: url(Images/image\ 17.png);
@@ -667,4 +763,45 @@ button {
   h1 {
     font-size: clamp(28px, 8vw, 64px);
   }
+}
+
+
+.navbar, .list {
+  overflow: visible;
+}
+
+
+.stats {
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+}
+
+
+.stats-overlay {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+  background-image: url('images/desc.png') no-repeat center/cover;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  display: none; 
+  z-index: 999;
+}
+
+
+.stats:hover .stats-overlay {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stats:hover .stats-overlay {
+  animation: fadeIn 0.25s ease;
 }
