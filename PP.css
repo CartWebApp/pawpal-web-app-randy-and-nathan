@@ -209,7 +209,7 @@ background-repeat: no-repeat;
 
 
 
-
+/* setting widget start */
 .overlay {
   position: fixed;
   top: 0;
@@ -335,6 +335,9 @@ background-repeat: no-repeat;
   margin-top: 30px;
   font-family: "Pixelify Sans", sans-serif;
 }
+
+/* settings widget end */
+
   .info {
     display:flex;
     background-image: url(images/desc.png);
