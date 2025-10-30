@@ -209,13 +209,13 @@ background-repeat: no-repeat;
 
 
 
-
+/* setting widget start */
 .overlay {
   position: fixed;
   top: 0;
   right: 0;
-  width: 474px;
-  height: 910px;
+  width: 474.07px;
+  height: 931px;
   background-image: url("Images/Setting-image.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -227,6 +227,7 @@ background-repeat: no-repeat;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 40px;
 }
 
 .overlay.show {
@@ -243,18 +244,16 @@ background-repeat: no-repeat;
 }
 
 .overlay-item {
-  text-align: center;
+  display: flex;
+  text-align:center;
+  justify-content: space-around;
   color: rgb(0, 0, 0);
   font-family: "Pixelify Sans", sans-serif;
   font-size: 20px;
   text-decoration: none;
   text-transform: lowercase;
   transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
-}
-
-.overlay-item:hover {
-  transform: scale(1.1);
-  color: #9ab0ff; 
+  gap: 00px;
 }
 
 
@@ -336,6 +335,9 @@ background-repeat: no-repeat;
   margin-top: 30px;
   font-family: "Pixelify Sans", sans-serif;
 }
+
+/* settings widget end */
+
   .info {
     display:flex;
     background-image: url(images/desc.png);
