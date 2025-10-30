@@ -153,10 +153,12 @@ footer {
   justify-content: center;
   align-items: flex-end;
 }
-  .home {
+  body.home,
+  body.pets {
     background-image: url(images/image\ 5.png);
-    background-position-y: 175px;
-    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   .privacy {
@@ -168,7 +170,7 @@ background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    size: 500px
+    size: 500px;
   }
 
   .navbar {
@@ -207,13 +209,23 @@ background-repeat: no-repeat;
   image-rendering: pixelated;
 }
 
+.view-all-pets {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
 
+.pets ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
 
 /* setting widget start */
 .overlay {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -474.07px;
   width: 474.07px;
   height: 931px;
   background-image: url("Images/Setting-image.png");
@@ -253,7 +265,6 @@ background-repeat: no-repeat;
   text-decoration: none;
   text-transform: lowercase;
   transition: transform 0.1s ease-in-out, color 0.1s ease-in-out;
-  gap: 00px;
 }
 
 
