@@ -39,10 +39,10 @@ p {
     padding: 0;
   }
 
-  body.welcome,
-  body.sign-in,
-  body.sign-up,
-  body.confirmed {
+body.welcome,
+body.sign-in,
+body.sign-up,
+body.confirmed {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,7 +176,7 @@ background-repeat: no-repeat;
     background-image: url(Images/navbar.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     z-index:100;
 }
 
@@ -206,8 +206,6 @@ background-repeat: no-repeat;
     .stats-icon:hover {
       transform: scale(1.1);
     }
-
-
     
   .stats-overlay {
   position: absolute;
@@ -294,6 +292,47 @@ background-repeat: no-repeat;
   height: 60px;
 }
 
+.pet-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.speech-bubble {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(images/bubbles-removebg-preview\ 1.png) no-repeat center/ cover; 
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  max-width: 200px;
+  text-align: center;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 14px;
+  box-shadow: 2px 2px 0 #000;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 12px 10px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+.speech-bubble.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+
 .menu-button img {
   width: 100%;
   height: auto;
@@ -301,15 +340,23 @@ background-repeat: no-repeat;
 }
 
 .view-all-pets {
+  position: fixed;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  bottom: 20px;
 }
 
-.pets ul{
+.scroll-pets{
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.scroll-pets ul {
+gap: 15px;
 }
 
 /* setting widget start */
@@ -583,8 +630,8 @@ section, footer {
 
 img {
   max-width: 100%;
-  height: auto;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 body.account h1 {
@@ -844,7 +891,7 @@ justify-content:center;
 }
 
 .special {
-  position: relative;
+  position: none;
   cursor: pointer;
 }
 
@@ -860,40 +907,40 @@ justify-content:center;
 
 .special-overlay {
   position: absolute;
-  top: -100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 280px;
-  background-color: #5e8bff;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  opacity: 0;
-  transition: top 0.5s ease, opacity 0.4s ease;
-  z-index: 999;
+  top: -200px; 
+  width: 236px;
+  height: 621px;
+  background: url(images/desc.png) no-repeat center / cover;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  pointer-events: none; 
+  transition: top 0.36s ease, opacity 0.28s ease;
+  z-index: 9999;
 }
 
-.special.active .special-overlay {
-  top: 100px;
+.special-overlay.slide-down {
+  top: 0px; 
   opacity: 1;
-  animation: dropIn 0.4s ease-out;
+  visibility: visible;
+  pointer-events: auto; 
 }
+
 
 @keyframes dropIn {
   from {
-    top: -150px;
+    top: -200px;
     opacity: 0;
   }
   to {
-    top: 70px;
+    top: 200px;
     opacity: 1;
   }
 }
 
-/* Text & Sections */
+
 .special-title {
   font-size: 18px;
   text-align: center;
@@ -925,7 +972,10 @@ justify-content:center;
   margin-bottom: 4px;
 }
 
-/* Progress Bar */
+.special-card {
+  width:176px;
+  height:50px;
+}
 .happiness-bar {
   background-color: #d1d9ff;
   height: 12px;
