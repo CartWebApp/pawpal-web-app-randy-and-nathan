@@ -1,30 +1,124 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const specialLi = document.querySelector(".special");
-  const specialIcon = document.querySelector(".special-icon");
-  const specialOverlay = document.querySelector(".special-overlay");
+  // Get ALL special sections
+  const specials = document.querySelectorAll(".special");
 
-  if (specialLi && specialIcon && specialOverlay) {
-    specialOverlay.style.display = "none";
+  specials.forEach((specialLi) => {
+    const specialIcon = specialLi.querySelector(".special-icon");
+    const specialOverlay = specialLi.querySelector(".special-overlay");
 
-    specialIcon.addEventListener("click", (e) => {
-      e.stopPropagation();
-      specialLi.classList.toggle("active");
-      if (specialLi.classList.contains("active")) {
-        specialOverlay.style.display = "block";
-        specialOverlay.classList.add("slide-down");
-      } else {
-        specialOverlay.classList.remove("slide-down");
-        setTimeout(() => (specialOverlay.style.display = "none"), 300);
-      }
-    });
+    if (specialIcon && specialOverlay) {
+      // Start hidden
+      specialOverlay.style.display = "none";
 
+      // Toggle when clicking icon
+      specialIcon.addEventListener("click", (e) => {
+        e.stopPropagation();
 
-    document.addEventListener("click", (e) => {
-      if (!specialOverlay.contains(e.target) && !specialIcon.contains(e.target)) {
-        specialLi.classList.remove("active");
-        specialOverlay.classList.remove("slide-down");
-        setTimeout(() => (specialOverlay.style.display = "none"), 300);
-      }
-    });
-  }
+        // Close all other open overlays first
+        document.querySelectorAll(".special.active").forEach((other) => {
+          if (other !== specialLi) {
+            other.classList.remove("active");
+            const otherOverlay = other.querySelector(".special-overlay");
+            if (otherOverlay) {
+              otherOverlay.classList.remove("slide-down");
+              otherOverlay.style.display = "none";
+            }
+          }
+        });
+
+        // Toggle this one
+        specialLi.classList.toggle("active");
+        if (specialLi.classList.contains("active")) {
+          specialOverlay.style.display = "block";
+          specialOverlay.classList.add("slide-down");
+        } else {
+          specialOverlay.classList.remove("slide-down");
+          setTimeout(() => (specialOverlay.style.display = "none"), 300);
+        }
+      });
+
+      // Close when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!specialOverlay.contains(e.target) && !specialIcon.contains(e.target)) {
+          specialLi.classList.remove("active");
+          specialOverlay.classList.remove("slide-down");
+          setTimeout(() => (specialOverlay.style.display = "none"), 300);
+        }
+      });
+      
+    }
+  });
 });
+
+// Function to show speech bubble notifications
+function showNotification(message) {
+  const speech = document.getElementById("petSpeech");
+  const text = document.getElementById("speechText");
+
+  if (!speech || !text) return;
+
+  text.textContent = message;
+  speech.classList.add("show");
+
+  // Optional: Read out loud
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(message);
+    utter.rate = 1.1; // slightly faster, more natural
+    utter.pitch = 1.2;
+    speechSynthesis.speak(utter);
+  }
+
+  // Hide after 5 seconds
+  setTimeout(() => {
+    speech.classList.remove("show");
+  }, 5000);
+}
+
+// Example usage:
+document.addEventListener("DOMContentLoaded", () => {
+  // Example notification on page load
+  setTimeout(() => showNotification("Welcome back! Your pet missed you."), 1500);
+
+  // You can trigger this anywhere in your code, e.g.:
+  // showNotification("Your pet needs food!");
+});
+
+let petStats = {
+  hunger: 80,      // 0 = starving, 100 = full
+  happiness: 60,   // 0 = sad, 100 = happy
+  energy: 50,      // 0 = tired, 100 = energetic
+  eventComing: false // true if a scheduled event is near
+};
+
+function checkPetNeeds() {
+  if (petStats.hunger < 30) {
+    showNotification("I'm hungry! 🍖 Please feed me!");
+  } else if (petStats.energy < 25) {
+    showNotification("I'm so tired... can I nap soon? ");
+  } else if (petStats.happiness < 40) {
+    showNotification("I'm feeling a bit lonely. Can we play? ");
+  } else if (petStats.eventComing) {
+    showNotification("Hey! You have an event coming up soon! ");
+    petStats.eventComing = false; // reset so it doesn’t repeat
+  }
+}
+
+setInterval(() => {
+  checkPetNeeds();
+}, 15000); // check every 15 seconds (adjust as needed)
+
+setInterval(() => {
+  petStats.hunger -= 5;
+  petStats.energy -= 3;
+  petStats.happiness -= 2;
+
+  // keep values in range 0–100
+  Object.keys(petStats).forEach(key => {
+    if (petStats[key] < 0) petStats[key] = 0;
+    if (petStats[key] > 100) petStats[key] = 100;
+  });
+
+  console.log(petStats); // see changes in console
+}, 10000); // decrease stats every 10 seconds
+
+
