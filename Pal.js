@@ -121,4 +121,16 @@ setInterval(() => {
   console.log(petStats); // see changes in console
 }, 10000); // decrease stats every 10 seconds
 
+document.addEventListener("DOMContentLoaded", () => {
+  const bars = document.querySelectorAll(".stats-overlay .bar");
+
+  bars.forEach(bar => {
+    // Generate a random mileage between 5 and 25
+    const randomMileage = Math.floor(Math.random() * 21) + 5;
+
+    // Update bar height and text
+    bar.style.height = `${randomMileage * 10}px`; // scale visually
+    bar.textContent = randomMileage;
+  });
+});
 

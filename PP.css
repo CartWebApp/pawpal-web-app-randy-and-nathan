@@ -202,6 +202,73 @@ footer {
     background: url(images/image\ 5.png)no-repeat center / cover;
   }
 
+
+  .activity {
+  position: relative;       
+  z-index: 1100;            
+}
+
+.activity-overlay {
+  position: absolute;
+  top: 60px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 320px;
+  max-height: 480px;
+  overflow-y: auto;
+  background: url(images/desc.png) no-repeat center / cover;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 50;
+}
+
+
+.activity:hover .activity-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(50%) translateY(10px);
+}
+
+
+.activity-container h3 {
+  font-family: 'Pixelify Sans', sans-serif;
+  margin-bottom: 6px;
+}
+
+.activity-container section {
+  margin-bottom: 10px;
+}
+
+.activity-content, 
+.feeding-content, 
+.exercise-content, 
+.medication-content, 
+.waste-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+}
+
+.activity-container img {
+  width: 25px;
+  height: auto;
+}
+
+.activity-container p {
+  font-family: 'Pixelify Sans', sans-serif;
+  margin: 4px;
+}
+
+.feeding-content {
+  font-size: 11px;
+}
+
   .privacy {
    background-image: url(Images/image\ 12.png) url(images/image\ 13.png);
 background-repeat: no-repeat;
@@ -384,7 +451,7 @@ background-repeat: no-repeat;
   height: auto;
   image-rendering: pixelated;
 }
-.pets ul {}
+
 
 .view-all-pets {
   position: fixed;
@@ -942,8 +1009,9 @@ background-size: cover;
 }
 
 .special {
-  position: none;
+  position: relative;
   cursor: pointer;
+  z-index: 1100;
 }
 
 .special-icon {
@@ -958,37 +1026,25 @@ background-size: cover;
 
 .special-overlay {
   position: absolute;
+  top: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%);
-  top: -200px; 
-  width: 236px;
-  height: 621px;
-  background: url(images/desc.png) no-repeat center / cover;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-  pointer-events: none; 
-  transition: top 0.36s ease, opacity 0.28s ease;
+  transform: translateX(-50%) translateY(0);
+  width: 320px;
+  padding: 16px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background: url(Images/desc.png) no-repeat center / cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 9999;
 }
 
-.special-overlay.slide-down {
-  top: 0px; 
+.special:hover .special-overlay {
   opacity: 1;
-  visibility: visible;
-  pointer-events: auto; 
-}
-
-
-@keyframes dropIn {
-  from {
-    top: -200px;
-    opacity: 0;
-  }
-  to {
-    top: 200px;
-    opacity: 1;
-  }
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(6px);
 }
 
 
@@ -996,7 +1052,7 @@ background-size: cover;
   font-size: 18px;
   text-align: center;
   margin: 0;
-  color: white;
+  color: black;
   text-shadow: 1px 1px #2c2c2c;
 }
 
