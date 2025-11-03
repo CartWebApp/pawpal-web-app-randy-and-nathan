@@ -1221,12 +1221,12 @@ justify-content:center;
 .special {
   position: relative;
   cursor: pointer;
+  z-index: 1100;
 }
 
-
 .special-icon {
-  width: 90px;
-  height: 80px;
+  width: 101px;
+  height: 101px;
   transition: transform 0.3s ease;
 }
 
@@ -1239,47 +1239,25 @@ justify-content:center;
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(0);
-  background: url(images/desc.png) no-repeat center / cover;
-  width: 320px; 
-  border-radius: 20px;
+  width: 320px;
   padding: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background: url(Images/desc.png) no-repeat center / cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 9999;
 }
 
-.special.active .special-overlay {
+.special:hover .special-overlay {
   opacity: 1;
-  top: 100px;
-    pointer-events: auto;
-  animation: dropIn 0.4s ease-out;
-    transform: translateX(-50%) translateY(6px);
-
-}
-
-html, body {
-  overflow-x: hidden;
-
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(6px);
 }
 
 
-@keyframes dropIn {
-  from {
-    top: -150px;
-    opacity: 0;
-  }
-  to {
-    top: 70px;
-    opacity: 1;
-  }
-}
-
-/* Text & Sections */
 .special-title {
   font-size: 18px;
   text-align: center;
@@ -1311,7 +1289,6 @@ html, body {
   margin-bottom: 4px;
 }
 
-/*Progress Bar*/ 
 .event-card {
   display: flex;
   justify-content: flex-end;
@@ -1359,6 +1336,36 @@ html, body {
 .special-add:hover {
   background-color: #5e8bff;
 }
+
+
+.event-card {
+  display: flex;
+  justify-content: flex-end;
+  background:#D9D9D9;
+  font-size: 14px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.special-card {
+  color:rgb(82, 107, 233);
+  width:176px;
+  height:50px;
+}
+.happiness-bar {
+  background-color: #d1d9ff;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.happiness-fill {
+  background-color: #ff9f43;
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+
  
   .settings-continued {
     display: flex;
