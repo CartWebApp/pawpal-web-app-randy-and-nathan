@@ -15,18 +15,6 @@ display: flex;
 justify-content: center;
 align-items: flex-end;
 }
-
-.view-all-pets {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  z-index: 1000;
-  display:flex;
-  justify-content:flex-start;
-}
-
 .hero img {
   width: 150px;
   height: auto;
@@ -54,10 +42,6 @@ p {
     padding: 0;
   }
 
-body.welcome,
-body.sign-in,
-body.sign-up,
-body.confirmed {
   body.welcome,
   body.sign-in,
   body.sign-up,
@@ -88,8 +72,6 @@ body.confirmed {
   gap: 20px; 
 }
 
-
-
   body.welcome h1,
   body.sign-in h1,
   body.sign-up h1{
@@ -117,42 +99,6 @@ body.welcome button {
   border-radius: 10px;
   cursor: pointer;
   box-sizing: border-box;
-}
-
-.activities {
-  background-image: url(Images/image\ 13.png);
-}
-
-.feeding-parent,
-.exercise-parent,
-.medication-parent,
-.waste-parent {
-  display:flex;
-  background-color: #6b8ed6;
-}
-
-.feeding-content,
-.waste-content {
-display:flex;
-flex-direction: row;
-}
-
-.medication-content {
-  display:flex;
-}
-
-.img-time-column {
-  display:flex;
- flex-direction:column-reverse;
- align-items:center;
-}
-
-.waste-img {
-width:150px
-}
-
-.pill-img {
-  width:80px
 }
 
  .welcome img:nth-child(1) {
@@ -215,73 +161,6 @@ footer {
     background: url(images/image\ 5.png)no-repeat center / cover;
   }
 
-
-  .activity {
-  position: relative;       
-  z-index: 1100;            
-}
-
-.activity-overlay {
-  position: absolute;
-  top: 60px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 320px;
-  max-height: 480px;
-  overflow-y: auto;
-  background: url(images/desc.png) no-repeat center / cover;
-  border: 2px solid #000;
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 50;
-}
-
-
-.activity:hover .activity-overlay {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(50%) translateY(10px);
-}
-
-
-.activity-container h3 {
-  font-family: 'Pixelify Sans', sans-serif;
-  margin-bottom: 6px;
-}
-
-.activity-container section {
-  margin-bottom: 10px;
-}
-
-.activity-content, 
-.feeding-content, 
-.exercise-content, 
-.medication-content, 
-.waste-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 80px;
-}
-
-.activity-container img {
-  width: 25px;
-  height: auto;
-}
-
-.activity-container p {
-  font-family: 'Pixelify Sans', sans-serif;
-  margin: 4px;
-}
-
-.feeding-content {
-  font-size: 11px;
-}
-
   .privacy {
    background-image: url(Images/image\ 12.png) url(images/image\ 13.png);
 background-repeat: no-repeat;
@@ -300,11 +179,8 @@ background-repeat: no-repeat;
     background-image: url(Images/navbar.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
     background-size: contain;
     z-index:100;
-    height:max-content;
-    width: 100%;
 }
 
 .navbar ul {
@@ -327,13 +203,14 @@ background-repeat: no-repeat;
     .stats-icon {
       width: 101px;
       height: 121px;
-      transition: transform 0.3s ease;
       transition: 0.3s ease;
     }
 
     .stats-icon:hover {
       transform: scale(1.1);
     }
+
+
     
   .stats-overlay {
   position: absolute;
@@ -382,7 +259,6 @@ background-repeat: no-repeat;
       align-items: flex-end;
       color: white;
       font-weight: bold;
-      transition: 0.3s ease;
       transition: height 0.3s ease;
     }
 
@@ -421,133 +297,32 @@ background-repeat: no-repeat;
   height: 60px;
 }
 
-.pet-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-#speech-bubble {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: url(images/bubbles-removebg-preview\ 1.png) no-repeat center/ cover; 
-  color: #000;
-  border: 2px solid #000;
-  border-radius: 20px;
-  padding: 10px 20px;
-  max-width: 200px;
-  text-align: center;
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 14px;
-  box-shadow: 2px 2px 0 #000;
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  
-}
-
-#speech-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 12px 10px 0;
-  border-style: solid;
-  border-color: #fff transparent transparent transparent;
-}
-
-#speech-bubble.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-10px);
-}
-
-
 .menu-button img {
   width: 100%;
   height: auto;
   image-rendering: pixelated;
 }
 
-
-.view-all-pets {
 .view-all {
   position: fixed;
   bottom: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  bottom: 20px;
-}
-
-.scroll-pets {
-  width: 100%;
-  overflow-x: scroll;          
-  overflow-y: hidden;
-  white-space: nowrap;       
-  scroll-behavior: smooth;   
-  -webkit-overflow-scrolling: touch; 
   z-index: 1000;
 }
 
-.scroll-track {
-  display: inline-flex;
-  gap: 20px;                 
-  padding: 20px;
-}
 
-.scroll-pets li {
-  flex: 0 0 auto;             
-  width: 200px;
-  height: 200px;
-  background: url(images/desc.png) no-repeat center/cover;
-  border-radius: 12px;
 .pets ul{
   list-style-type: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  image-rendering: pixelated;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease;
 }
-
-.scroll-item:hover {
-  transform: scale(1.05);
-}
-
-.scroll-container::-webkit-scrollbar {
-  height: 12px;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background-color: #6b8ed6;
-  border-radius: 6px;
-}
-
 
 /* setting widget start */
-
-
-
-.settings::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -100px; 
-  width: 30px;
-  height: 100%;
-  background: transparent;
-}
-
 .overlay {
   position: fixed;
   top: 0;
-  right: -480px; 
-  width: 374.07px;
-  height: 931px;;
-  align-items: center;
-  justify-content: flex-start;
   right: -474px; 
   width: 474px;
   height: 100vh;
@@ -560,73 +335,36 @@ background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 60px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(60px) scale(0.98);
-  transition: 
-    opacity 0.4s ease,
-    transform 0.4s cubic-bezier(0.25, 1.25, 0.5, 1.0),
-    right 0.4s ease;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: 130px;
   justify-content: space-around;
   image-rendering: pixelated;
 }
 
-
 .overlay.show {
   right: 0;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0) scale(1);
 }
 
 .overlay-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 76px;
   gap: 40px;
   width: 100%;
-  padding-top: 80px;
   padding-top: 100px;
 }
 
 .overlay-item {
-  color: #000;
   color: black;
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 28px;
   font-size: 25px;
   text-decoration: none;
-  border-radius: 12px;
-  width: 80%;
-  text-align: center;
-  padding: 12px 0;
-  transition: transform 0.2s ease, background 0.2s ease;
   transition: transform 0.15s ease, color 0.15s ease;
 }
 
 .overlay-item:hover {
-transform: scale(1.07);
-background: rgba(255, 225, 255, 0.95)
   transform: scale(1.1);
   color: #9ab0ff;
 }
 
-.settings-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;  
-  object-position: top center; 
-  pointer-events: none; 
-  z-index: 0; 
 .logout-btn {
   background-color: rgb(255, 0, 0);
   color: white;
@@ -641,9 +379,6 @@ background: rgba(255, 225, 255, 0.95)
 }
 
 
-#settingsOverlay .overlay-content {
-  position: relative;
-  z-index: 1;
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -651,25 +386,12 @@ background: rgba(255, 225, 255, 0.95)
 
 /* settings widget end */
 
-.settings:hover + #settingsOverlay,
-#settingsOverlay:hover {
-  right: 0;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0) scale(1);
 .activities {
   background-image: url(Images/image\ 5.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.settings:hover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 480px; 
-  height: 100%;
 .exercise-parent,
 .feeding-parent, 
 .medication-parent,
@@ -682,17 +404,6 @@ background: rgba(255, 225, 255, 0.95)
   padding:20px;
 }
 
-
-.logout-btn {
-  background-color: red;
-  color: white;
-  font-size: 24px;
-  border-radius: 12px;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  font-family: "Pixelify Sans", sans-serif;
-  transition: transform 0.2s ease, background 0.2s ease;
 .feeding-content, 
 .exercise-content,
 .medication-content, 
@@ -719,7 +430,6 @@ background: rgba(255, 225, 255, 0.95)
   margin-top: 30px;
   font-family: "Pixelify Sans", sans-serif;
 }
-/* settings widget end */
 
 .info-position {
   display:flex;
@@ -730,7 +440,6 @@ background: rgba(255, 225, 255, 0.95)
     background-image: url(images/desc.png);
     background-position: center;
 background-repeat: no-repeat;
-  }
 background-size: cover;
 }
 
@@ -743,14 +452,6 @@ font-size: x-large;
 flex-direction: row;
 flex-wrap: wrap;
 padding:150px
-}
-
-.aboutus {
-  display:flex;
-   background-image: url(Images/back.png);
-   background-position: center;
-   background-repeat: no-repeat;
-   padding: 50px;
 }
 
   .about-backout {
@@ -825,8 +526,6 @@ h1 {
   background-image: url(Images/desc.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-padding:100px
   background-size: cover;
   padding: 40px;
   border-radius: 12px;
@@ -847,25 +546,15 @@ align-items:center;
   top: 10%;
   left: 5%;
   width: 100%;
-  color: #000;
   display:flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.home-btn {
-  display: inline-block;
-  background-color: #94bfff;
-  border: 3px solid #6b8ed6;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 18px;
 .faq p {
   text-align: left;
   margin: 12px 0;
   color: #000;
-  text-decoration: none;
-  image-rendering: pixelated;
   border-radius: 8px;
   padding: 8px;
   font-size: 20px;
@@ -884,16 +573,6 @@ h1 {
   font-size: 32px;
   color: #fff;
   text-shadow: 2px 2px #3a2a6a;
-}
-
-.faq p {
-  text-align: left;
-  margin: 12px 0;
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 16px;
 }
 
 footer {
@@ -975,8 +654,6 @@ section, footer {
 
 img {
   max-width: 100%;
-  display: flex;
-  align-items: center;
   height: auto;
   display: block;
 }
@@ -997,7 +674,6 @@ body.account h1 {
   width:100%;
   padding: 70px;
   border: none;
-  background-color: red;
   background-color: rgb(255, 0, 0);
   color: white;
 }
@@ -1025,7 +701,6 @@ body.log {
   align-items: center;
   padding: 30px 110px;
   border: none;
-  background-color: red;
   background-color: rgb(255, 0, 0);
   color: white;
 }
@@ -1054,9 +729,6 @@ body.log {
 
 
 .logout {
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
   background-color: red;
   border-radius: 10%;
   width:auto;
@@ -1075,15 +747,12 @@ height:max-content;
  justify-content:flex-end;
  border-radius: 10%;
   color:white;
-  background-color: red;
   padding-left: 400px;
-  padding-right:400px;
   padding-right: 400px;
 }
 
 .backhome{
   display:flex;
-  justify-content: center;
   align-items:center;
   padding-left:30px;
  background-image: url(Images/back.png);
@@ -1303,8 +972,6 @@ justify-content:center;
     background-position:center;
   }
 
-a.view-all {
-  align-items:flex-end
 .accountsetting,
   .aboutsetting,
   .support,
@@ -1344,11 +1011,6 @@ display:flex;
 flex-direction: column;
 }
 
-  .navbar {
-    flex-direction: row;
-    gap: 20px;
-    height:max-content;
-background-size: cover;
   .backhome-settings {
   display:flex;
   align-items:center;
@@ -1435,10 +1097,7 @@ justify-content:center;
     height: auto;
     font-size: clamp(16px, 4vw, 24px);
   }
-
-  .stats {
-    width:70px
-  }
+}
 
   .overlay {
     width: 100%;
@@ -1452,12 +1111,6 @@ justify-content:center;
   h1 {
     font-size: clamp(28px, 8vw, 64px);
   }
-}
-
-
-.navbar, .list {
-  overflow: visible;
-}
 
 
 .stats {
@@ -1480,7 +1133,6 @@ justify-content:center;
   z-index: 999;
 }
 
-
 .stats:hover .stats-overlay {
   display: block;
 }
@@ -1498,12 +1150,10 @@ justify-content:center;
 .special {
   position: relative;
   cursor: pointer;
-  z-index: 1100;
 }
 
+
 .special-icon {
-  width: 101px;
-  height: 101px;
   width: 90px;
   height: 80px;
   transition: transform 0.3s ease;
@@ -1519,11 +1169,7 @@ justify-content:center;
   left: 50%;
   transform: translateX(-50%) translateY(0);
   width: 320px;
-  padding: 16px;
-  border: 2px solid #000;
   border-radius: 20px;
-  background: url(Images/desc.png) no-repeat center / cover;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   display: flex;
@@ -1535,11 +1181,8 @@ justify-content:center;
   z-index: 9999;
 }
 
-.special:hover .special-overlay {
 .special.active .special-overlay {
   opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(6px);
   top: 100px;
     pointer-events: auto;
   animation: dropIn 0.4s ease-out;
