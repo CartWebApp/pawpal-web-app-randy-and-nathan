@@ -383,71 +383,124 @@ background-repeat: no-repeat;
   justify-content: center;
 }
 
-/* setting widget start */
+.settings::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100px; 
+  width: 30px;
+  height: 100%;
+  background: transparent;
+}
+
 .overlay {
   position: fixed;
   top: 0;
-  right: -474px; 
-  width: 474px;
-  height: 100vh;
-  background-image: url("Images/Setting-image.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
+  right: -480px; 
+  width: 374.07px;
+  height: 931px;
+  align-items: center;
+  justify-content: flex-start;
   z-index: 9999;
-  transition: right 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  image-rendering: pixelated;
+  justify-content: space-between;
+  padding-top: 60px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(60px) scale(0.98);
+  transition: 
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.25, 1.25, 0.5, 1.0),
+    right 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: 130px;
 }
+
 
 .overlay.show {
   right: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
 }
 
 .overlay-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 76px;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 .overlay-item {
-  color: black;
+  color: #000;
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 25px;
+  font-size: 28px;
   text-decoration: none;
-  transition: transform 0.15s ease, color 0.15s ease;
+  border-radius: 12px;
+  width: 80%;
+  text-align: center;
+  padding: 12px 0;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .overlay-item:hover {
-  transform: scale(1.1);
-  color: #9ab0ff;
+transform: scale(1.07);
+background: rgba(255, 225, 255, 0.95)
 }
+
+.settings-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  
+  object-position: top center; 
+  pointer-events: none; 
+  z-index: 0; 
+}
+
+
+#settingsOverlay .overlay-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.settings:hover + #settingsOverlay,
+#settingsOverlay:hover {
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+
+.settings:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 480px; 
+  height: 100%;
+}
+
 
 .logout-btn {
-  background-color: rgb(255, 0, 0);
+  background-color: red;
   color: white;
-  border-radius: 10px;
-  font-size: 20px;
-  padding: 20px;
+  font-size: 24px;
+  border-radius: 12px;
+  width: 100%;
   text-align: center;
-  width: 80%;
   text-decoration: none;
-  cursor: pointer;
   font-family: "Pixelify Sans", sans-serif;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
-
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* settings widget end */
 
 .activities {
@@ -482,18 +535,6 @@ background-repeat: no-repeat;
   width:150px;
 }
 
-.logout-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-  font-size: 22px;
-  cursor: pointer;
-  margin-top: 30px;
-  font-family: "Pixelify Sans", sans-serif;
-}
 
 .info-position {
   display:flex;
