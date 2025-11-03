@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Get ALL special sections
   const specials = document.querySelectorAll(".special");
+  let notificationsEnabled = true; // default: notifications ON
 
   specials.forEach((specialLi) => {
     const specialIcon = specialLi.querySelector(".special-icon");
@@ -92,7 +93,7 @@ let petStats = {
 
 function checkPetNeeds() {
   if (petStats.hunger < 30) {
-    showNotification("I'm hungry! 🍖 Please feed me!");
+    showNotification("I'm hungry! Please feed me!");
   } else if (petStats.energy < 25) {
     showNotification("I'm so tired... can I nap soon? ");
   } else if (petStats.happiness < 40) {
@@ -132,5 +133,12 @@ document.addEventListener("DOMContentLoaded", () => {
     bar.style.height = `${randomMileage * 10}px`; // scale visually
     bar.textContent = randomMileage;
   });
+});
+
+const settingsButton = document.querySelector('.settings');
+const settingsOverlay = document.getElementById('settingsOverlay');
+
+settingsButton.addEventListener('click', () => {
+  settingsOverlay.classList.toggle('show');
 });
 

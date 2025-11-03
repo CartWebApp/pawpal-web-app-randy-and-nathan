@@ -506,69 +506,80 @@ background-repeat: no-repeat;
 
 /* setting widget start */
 .overlay {
-  position: fixed;
-  top: 0;
-  right: -474px; 
-  width: 474px;
-  height: 100vh;
-  background-image: url("Images/Setting-image.png");
-  background-repeat: no-repeat;
-  background-size: contain;
+  position: absolute;
+  top: 60px;
+  right: -480px; 
+  width: 474.07px;
+  height: 931px;
+  background: url("Images/Setting-image.png")no-repeat center / cover;
+  align-items: center;
+  justify-content: flex-start;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
   z-index: 9999;
-  transition: right 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  image-rendering: pixelated;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(60px) scale(0.98);
+  transition: 
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.25, 1.25, 0.5, 1.0),
+    right 0.4s ease;
 }
 
 .overlay.show {
   right: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
 }
 
 .overlay-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 112px;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 .overlay-item {
-  color: black;
+  color: #000;
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 25px;
+  font-size: 28px;
   text-decoration: none;
-  transition: transform 0.15s ease, color 0.15s ease;
+  border-radius: 12px;
+  width: 80%;
+  text-align: center;
+  padding: 12px 0;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .overlay-item:hover {
-  transform: scale(1.1);
-  color: #9ab0ff;
+transform: scale(1.07);
+background: rgba(255, 225, 255, 0.95)
 }
 
 .logout-btn {
   background-color: red;
   color: white;
-  border-radius: 10px;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
+  font-size: 24px;
+  border: 3px solid #000;
+  border-radius: 12px;
+  padding: 14px;
   width: 80%;
+  text-align: center;
   text-decoration: none;
-  cursor: pointer;
   font-family: "Pixelify Sans", sans-serif;
+  box-shadow: 2px 2px 0 #000;
+  transition: transform 0.2s ease, background 0.2s ease;
+  margin-bottom: 50px;
 }
 
 
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
 /* settings widget end */
 .logout-btn {
