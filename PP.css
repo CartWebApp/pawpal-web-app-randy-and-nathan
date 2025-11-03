@@ -1108,6 +1108,7 @@ justify-content:center;
   }
 
 
+
 .column {
   display:flex;
   flex-direction: column;
@@ -1136,6 +1137,10 @@ justify-content:center;
  background-position: center;
  padding-left:50px;
  padding-right:50px;
+}
+
+.body {
+  overflow-x: scroll;
 }
 
 .feedbackinfo {
