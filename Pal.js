@@ -202,5 +202,45 @@ function showNotification(message) {
   }, 5000);
 }
 
-/*comment box here*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mobile = window.matchMedia("(max-width: 768px)");
+
+  function handleNavBehavior() {
+    const isMobile = mobile.matches;
+
+    // Select navbar items
+    const activity = document.querySelector(".activity-icon");
+    const special = document.querySelector(".special-icon");
+    const stats = document.querySelector(".stats-icon");
+    const gear = document.querySelector(".gear-icon");
+
+    if (isMobile) {
+      // MOBILE MODE — make icons link to pages
+      activity.onclick = () => (window.location.href = "activities.html");
+      special.onclick = () => (window.location.href = "special.needs.html");
+      stats.onclick = () => (window.location.href = "stats.html");
+      gear.onclick = () => (window.location.href = "settings.html");
+
+      // Hide overlays on mobile
+      document.querySelectorAll(".activity-overlay, .special-overlay, .stats-overlay, #settingsOverlay")
+        .forEach(el => el.style.display = "none");
+    } else {
+      // DESKTOP MODE — overlays behave normally
+      activity.onclick = null;
+      special.onclick = null;
+      stats.onclick = null;
+      gear.onclick = null;
+
+      // You can restore hover/overlay behavior if you use JS toggles
+      document.querySelectorAll(".activity-overlay, .special-overlay, .stats-overlay, #settingsOverlay")
+        .forEach(el => el.style.display = "");
+    }
+  }
+
+  // Run on load and whenever screen resizes
+  handleNavBehavior();
+  mobile.addEventListener("change", handleNavBehavior);
+});
+
 

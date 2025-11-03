@@ -966,6 +966,13 @@ justify-content:center;
     max-width: 100%;
   }
 
+  .activity-overlay,
+  .special-overlay,
+  .stats-overlay,
+  #settingsOverlay {
+    display: none !important;
+  }
+  
   body {
     background-attachment: scroll;
     background-size: cover;
