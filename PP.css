@@ -27,6 +27,10 @@ align-items: flex-end;
   justify-content:flex-start;
 }
 
+.hero img {
+  width: 150px;
+  height: auto;
+} 
 p {
   display:flex;
   flex-direction:row;
@@ -54,6 +58,10 @@ body.welcome,
 body.sign-in,
 body.sign-up,
 body.confirmed {
+  body.welcome,
+  body.sign-in,
+  body.sign-up,
+  body.confirmed {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,6 +76,10 @@ body.confirmed {
     color: white; 
   }
   
+  .Pet-wrapper {
+  background-image: url(Images/bubbles-removebg-preview\ 1.png);
+  background-repeat: no-repeat;
+  }
 
 .buttons {
   display: flex;
@@ -197,6 +209,7 @@ footer {
   justify-content: center;
   align-items: flex-end;
 }
+
   body.home,
   body.pets {
     background: url(images/image\ 5.png)no-repeat center / cover;
@@ -288,6 +301,7 @@ background-repeat: no-repeat;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-size: contain;
     z-index:100;
     height:max-content;
     width: 100%;
@@ -314,6 +328,7 @@ background-repeat: no-repeat;
       width: 101px;
       height: 121px;
       transition: transform 0.3s ease;
+      transition: 0.3s ease;
     }
 
     .stats-icon:hover {
@@ -368,6 +383,7 @@ background-repeat: no-repeat;
       color: white;
       font-weight: bold;
       transition: 0.3s ease;
+      transition: height 0.3s ease;
     }
 
       .label {
@@ -455,7 +471,9 @@ background-repeat: no-repeat;
 
 
 .view-all-pets {
+.view-all {
   position: fixed;
+  bottom: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -469,6 +487,7 @@ background-repeat: no-repeat;
   white-space: nowrap;       
   scroll-behavior: smooth;   
   -webkit-overflow-scrolling: touch; 
+  z-index: 1000;
 }
 
 .scroll-track {
@@ -483,6 +502,8 @@ background-repeat: no-repeat;
   height: 200px;
   background: url(images/desc.png) no-repeat center/cover;
   border-radius: 12px;
+.pets ul{
+  list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -527,7 +548,15 @@ background-repeat: no-repeat;
   height: 931px;;
   align-items: center;
   justify-content: flex-start;
+  right: -474px; 
+  width: 474px;
+  height: 100vh;
+  background-image: url("Images/Setting-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
   z-index: 9999;
+  transition: right 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -543,6 +572,8 @@ background-repeat: no-repeat;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: 130px;
+  justify-content: space-around;
+  image-rendering: pixelated;
 }
 
 
@@ -558,25 +589,32 @@ background-repeat: no-repeat;
   flex-direction: column;
   align-items: center;
   gap: 76px;
+  gap: 40px;
   width: 100%;
   padding-top: 80px;
+  padding-top: 100px;
 }
 
 .overlay-item {
   color: #000;
+  color: black;
   font-family: "Pixelify Sans", sans-serif;
   font-size: 28px;
+  font-size: 25px;
   text-decoration: none;
   border-radius: 12px;
   width: 80%;
   text-align: center;
   padding: 12px 0;
   transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 
 .overlay-item:hover {
 transform: scale(1.07);
 background: rgba(255, 225, 255, 0.95)
+  transform: scale(1.1);
+  color: #9ab0ff;
 }
 
 .settings-bg {
@@ -589,14 +627,29 @@ background: rgba(255, 225, 255, 0.95)
   object-position: top center; 
   pointer-events: none; 
   z-index: 0; 
+.logout-btn {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 
 #settingsOverlay .overlay-content {
   position: relative;
   z-index: 1;
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* settings widget end */
 
 .settings:hover + #settingsOverlay,
 #settingsOverlay:hover {
@@ -604,6 +657,10 @@ background: rgba(255, 225, 255, 0.95)
   opacity: 1;
   pointer-events: auto;
   transform: translateX(0) scale(1);
+.activities {
+  background-image: url(Images/image\ 5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .settings:hover::after {
@@ -613,6 +670,16 @@ background: rgba(255, 225, 255, 0.95)
   right: 0;
   width: 480px; 
   height: 100%;
+.exercise-parent,
+.feeding-parent, 
+.medication-parent,
+.waste-parent{
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  background-color:rgb(68, 169, 212) ;
+  border-radius: 10px;
+  padding:20px;
 }
 
 
@@ -626,8 +693,19 @@ background: rgba(255, 225, 255, 0.95)
   text-decoration: none;
   font-family: "Pixelify Sans", sans-serif;
   transition: transform 0.2s ease, background 0.2s ease;
+.feeding-content, 
+.exercise-content,
+.medication-content, 
+.waste-content {
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
 }
 
+.waste-img {
+  width:150px;
+}
 
 .logout-btn {
   background-color: red;
@@ -653,6 +731,8 @@ background: rgba(255, 225, 255, 0.95)
     background-position: center;
 background-repeat: no-repeat;
   }
+background-size: cover;
+}
 
 .history {
   display:flex;
@@ -677,6 +757,21 @@ padding:150px
 display:flex;
   }
   
+    .backhome-settings {
+  display:flex;
+  align-items:center;
+justify-content:center;
+  padding-left:30px;
+ background-image: url(Images/back.png);
+ min-height: 100px;
+ font-size: 60px;
+ background-repeat:no-repeat;
+ padding-top:10px;
+ background-position: center;
+ padding-left:50px;
+ padding-right:50px;
+}
+
 
   .about {
     display:flex;
@@ -691,12 +786,33 @@ h1 {
 
 
 .help-page {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url(images/image\ 12.png);
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.back-btn {
+  display:flex;
+  align-items:center;
+  padding-left:30px;
+ background-image: url(Images/back.png);
+ min-height: 100px;
+ font-size: 60px;
+ background-repeat:no-repeat;
+ padding-top:10px;
+ background-position: center;
+ padding-left:50px;
+ padding-right:50px;
 }
 
 .faq-container {
+  display:flex;
+  flex-direction: column;
   position: relative;
   width: 80vw;
   max-width: 900px;
@@ -704,11 +820,16 @@ h1 {
 }
 
 .faq {
+  display:flex;
+  flex-direction: column;
   background-image: url(Images/desc.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 padding:100px
+  background-size: cover;
+  padding: 40px;
+  border-radius: 12px;
 }
 
 .faq-frame {
@@ -727,6 +848,9 @@ align-items:center;
   left: 5%;
   width: 100%;
   color: #000;
+  display:flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .home-btn {
@@ -736,9 +860,24 @@ align-items:center;
   border-radius: 8px;
   padding: 10px 20px;
   font-size: 18px;
+.faq p {
+  text-align: left;
+  margin: 12px 0;
   color: #000;
   text-decoration: none;
   image-rendering: pixelated;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 20px;
+}
+
+.contactinfo {
+ background-image: url(Images/back.png);
+ background-position: center;
+ background-repeat: no-repeat;
+ padding: 75px;
+  margin-top: 20px;
+  font-size: 25px;
 }
 
 h1 {
@@ -774,6 +913,8 @@ footer {
 
 .new{
 background-image: url(images/image\ 5.png);
+background-size:cover;
+background-repeat:no-repeat;
 }
 
 .new-pet-page input,
@@ -836,6 +977,8 @@ img {
   max-width: 100%;
   display: flex;
   align-items: center;
+  height: auto;
+  display: block;
 }
 
 body.account h1 {
@@ -855,6 +998,7 @@ body.account h1 {
   padding: 70px;
   border: none;
   background-color: red;
+  background-color: rgb(255, 0, 0);
   color: white;
 }
 
@@ -864,17 +1008,40 @@ body.log {
   justify-content: center;
   align-items: center;
   background-image: url(images/image\ 13.png);
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.confirm-logout {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
 
 .log button {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   padding: 30px 110px;
   border: none;
   background-color: red;
+  background-color: rgb(255, 0, 0);
   color: white;
 }
 
+.confirmation {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  background-color: #6ea4ff;
+  border-radius: 10px;
+  width: fit-content;
+} 
+
 .hero-settings{
   background-image: url(Images/image\ 17.png);
+  background-size: cover;
 }
 
 .settings-continued {
@@ -911,6 +1078,7 @@ height:max-content;
   background-color: red;
   padding-left: 400px;
   padding-right:400px;
+  padding-right: 400px;
 }
 
 .backhome{
@@ -958,6 +1126,15 @@ background-image: url(Images/image\ 17.png);
   font-size: xx-large;
 }
 
+.backout-feedback {
+  background-image: url(Images/back.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 200px;
+  font-size: xx-large;
+  text-align: center;
+}
+
 .done-reading{
   display:flex;
 align-items: center;
@@ -983,6 +1160,39 @@ justify-content: center;
   flex-direction:column;
   align-items:center;
   justify-content: space-between;
+  background-color: rgb(77, 132, 203);
+}
+
+.events {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-between;
+  background-color: rgb(77, 132, 203);
+}
+
+.add-new {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.add-event {
+  background: #3174cc;
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 16px;
+  font-family: "Pixelify Sans", sans-serif;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.add-event:hover {
+  background: #1c9feb;
+  transform: scale(1.05);
 }
 
 .namechange,
@@ -998,17 +1208,20 @@ padding:45px;
 
 .Feedback {
   display:flex;
+  flex-direction:column;
 background-image: url(Images/image\ 17.png);
 }
 
 .feedbackinfo {
   display:flex;
   flex-direction:row;
+  justify-content:center;
   background-image: url(Images/desc.png);
   background-position: center;
 background-size: contain;
 background-repeat: no-repeat;
 padding:240px;
+font-size: xx-large
 }
 
 .text-position {
@@ -1016,14 +1229,119 @@ display:flex;
 justify-content:center;
 }
 
+.mileage {
+  background-image: url(Images/desc.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 75px;
+  background-size: contain;
+  margin-top: 20px;
+}
+
+.graphtitle {
+  font-size: 25px;
+  background-color:#1c9feb;
+  border-radius: 10px;
+  padding:10px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: large;
+  margin-bottom: 10px;
+  background-image: url(Images/back.png);
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  padding:20px
+}
+
+/*comment box here*/
+.feedbackform {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comment {
+  background-image: url(Images/back.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width:400px; 
+}
+
+.commentbutton {
+  background-image: url(Images/desc.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#thankYouMessage {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: x-large;
+    background-image: url(Images/back.png);
+    background-position: center;
+    text-align: center;
+    padding:50px;
+    background-repeat: no-repeat;
+}
+
+
+
+/*mobile port starts here*/
 @media (max-width: 768px) {
+* {
+    max-width: 100%;
+  }
+
   body {
     background-attachment: scroll;
     background-size: cover;
+    background-position:center;
   }
 
 a.view-all {
   align-items:flex-end
+.accountsetting,
+  .aboutsetting,
+  .support,
+  .privacy, 
+  .help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 50px 0;
+    background-image: url("Images/desc.png");
+    font-size:xx-large;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+  }
+
+  .waste-img {
+    width:150px
+  }
+
+
+.column {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.feeding-content,
+.exercise-content,
+.medication-content,
+.waste-content {
+display:flex;
+flex-direction: column;
 }
 
   .navbar {
@@ -1031,6 +1349,85 @@ a.view-all {
     gap: 20px;
     height:max-content;
 background-size: cover;
+  .backhome-settings {
+  display:flex;
+  align-items:center;
+justify-content:center;
+  padding-left:30px;
+ background-image: url(Images/back.png);
+ min-height: 100px;
+ font-size: 60px;
+ background-repeat:no-repeat;
+ padding-top:10px;
+ background-position: center;
+ padding-left:50px;
+ padding-right:50px;
+}
+
+.feedbackinfo {
+  font-size:large;
+}
+
+.history {
+  font-size: large;
+}
+
+.navbar {
+  background-size: cover;
+  height: 120px;
+  margin-bottom:20px;
+}
+
+.activity {
+    width: 90px;
+    height: 90px;
+  padding-top:30px;
+    margin-right:10px;
+  }
+
+.settings {
+    width: 150px;
+    padding-top: 30px;
+  }
+
+.stats {
+    width: 80px;
+    height: 100px;
+    padding-top:20px;
+  }
+
+  .newpet {
+    width: 90px;
+    height: 90px;
+    padding-top: 20px
+  }
+
+  .special {
+    size:100px;
+    width: 80px;
+    height: 90px;
+    margin-right:15px;
+    padding-top:20px
+  }
+
+  .stats-icon {
+      width: 65px;
+      height: 105px;
+      transition: 0.3s ease;
+      margin-left:10px
+    }
+
+    .stats-icon:hover {
+      transform: scale(1.0);
+    }
+
+.navbar ul {
+  overflow: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    height:100px
   }
 
   button {
@@ -1107,6 +1504,8 @@ background-size: cover;
 .special-icon {
   width: 101px;
   height: 101px;
+  width: 90px;
+  height: 80px;
   transition: transform 0.3s ease;
 }
 
@@ -1125,6 +1524,11 @@ background-size: cover;
   border-radius: 20px;
   background: url(Images/desc.png) no-repeat center / cover;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1132,12 +1536,35 @@ background-size: cover;
 }
 
 .special:hover .special-overlay {
+.special.active .special-overlay {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(6px);
+  top: 100px;
+    pointer-events: auto;
+  animation: dropIn 0.4s ease-out;
+    transform: translateX(-50%) translateY(6px);
+
+}
+
+html, body {
+  overflow-x: hidden;
+
 }
 
 
+@keyframes dropIn {
+  from {
+    top: -150px;
+    opacity: 0;
+  }
+  to {
+    top: 70px;
+    opacity: 1;
+  }
+}
+
+/* Text & Sections */
 .special-title {
   font-size: 18px;
   text-align: center;
@@ -1169,6 +1596,7 @@ background-size: cover;
   margin-bottom: 4px;
 }
 
+/*Progress Bar*/ 
 .event-card {
   display: flex;
   justify-content: flex-end;
@@ -1216,3 +1644,14 @@ background-size: cover;
 .special-add:hover {
   background-color: #5e8bff;
 }
+ 
+  .settings-continued {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+    gap: 25px;
+  }
