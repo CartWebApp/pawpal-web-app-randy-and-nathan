@@ -210,7 +210,71 @@ background-repeat: no-repeat;
       transform: scale(1.1);
     }
 
-
+    .activity {
+      position: relative;       
+      z-index: 1100;            
+    }
+    
+    .activity-overlay {
+      position: absolute;
+      top: 60px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 320px;
+      max-height: 480px;
+      overflow-y: auto;
+      background: url(images/desc.png) no-repeat center / cover;
+      border: 2px solid #000;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 50;
+    }
+    
+    
+    .activity:hover .activity-overlay {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(50%) translateY(10px);
+    }
+    
+    
+    .activity-container h3 {
+      font-family: 'Pixelify Sans', sans-serif;
+      margin-bottom: 6px;
+    }
+    
+    .activity-container section {
+      margin-bottom: 10px;
+    }
+    
+    .activity-content, 
+    .feeding-content, 
+    .exercise-content, 
+    .medication-content, 
+    .waste-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 80px;
+    }
+    
+    .activity-container img {
+      width: 25px;
+      height: auto;
+    }
+    
+    .activity-container p {
+      font-family: 'Pixelify Sans', sans-serif;
+      margin: 4px;
+    }
+    
+    .feeding-content {
+      font-size: 11px;
+    }
     
   .stats-overlay {
   position: absolute;
@@ -1175,7 +1239,8 @@ justify-content:center;
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(0);
-  width: 320px;
+  background: url(images/desc.png) no-repeat center / cover;
+  width: 320px; 
   border-radius: 20px;
   padding: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
