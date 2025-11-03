@@ -506,21 +506,33 @@ background-repeat: no-repeat;
 
 
 /* setting widget start */
-.overlay {
+
+
+
+.settings::after {
+  content: "";
   position: absolute;
-  top: 60px;
+  top: 0;
+  right: -100px; 
+  width: 30px;
+  height: 100%;
+  background: transparent;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
   right: -480px; 
-  width: 474.07px;
-  height: 931px;
-  background: url("Images/Setting-image.png")no-repeat center / cover;
+  width: 374.07px;
+  height: 931px;;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.4);
   z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding-top: 60px;
   opacity: 0;
   pointer-events: none;
   transform: translateX(60px) scale(0.98);
@@ -528,7 +540,11 @@ background-repeat: no-repeat;
     opacity 0.4s ease,
     transform 0.4s cubic-bezier(0.25, 1.25, 0.5, 1.0),
     right 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: 130px;
 }
+
 
 .overlay.show {
   right: 0;
@@ -541,7 +557,7 @@ background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 112px;
+  gap: 76px;
   width: 100%;
   padding-top: 80px;
 }
@@ -563,26 +579,56 @@ transform: scale(1.07);
 background: rgba(255, 225, 255, 0.95)
 }
 
+.settings-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  
+  object-position: top center; 
+  pointer-events: none; 
+  z-index: 0; 
+}
+
+
+#settingsOverlay .overlay-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+.settings:hover + #settingsOverlay,
+#settingsOverlay:hover {
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+
+.settings:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 480px; 
+  height: 100%;
+}
+
+
 .logout-btn {
   background-color: red;
   color: white;
   font-size: 24px;
-  border: 3px solid #000;
   border-radius: 12px;
-  padding: 14px;
-  width: 80%;
+  width: 100%;
   text-align: center;
   text-decoration: none;
   font-family: "Pixelify Sans", sans-serif;
-  box-shadow: 2px 2px 0 #000;
   transition: transform 0.2s ease, background 0.2s ease;
-  margin-bottom: 50px;
 }
 
 
-
-
-/* settings widget end */
 .logout-btn {
   background-color: red;
   color: white;
@@ -595,6 +641,7 @@ background: rgba(255, 225, 255, 0.95)
   margin-top: 30px;
   font-family: "Pixelify Sans", sans-serif;
 }
+/* settings widget end */
 
 .info-position {
   display:flex;
