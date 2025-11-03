@@ -410,7 +410,7 @@ background-repeat: no-repeat;
   display: inline-block;
 }
 
-.speech-bubble {
+#speech-bubble {
   position: absolute;
   bottom: 120px;
   left: 50%;
@@ -427,9 +427,10 @@ background-repeat: no-repeat;
   box-shadow: 2px 2px 0 #000;
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  
 }
 
-.speech-bubble::after {
+#speech-bubble::after {
   content: "";
   position: absolute;
   bottom: -12px;
@@ -440,7 +441,7 @@ background-repeat: no-repeat;
   border-color: #fff transparent transparent transparent;
 }
 
-.speech-bubble.show {
+#speech-bubble.show {
   opacity: 1;
   transform: translateX(-50%) translateY(-10px);
 }
