@@ -142,3 +142,63 @@ settingsButton.addEventListener('click', () => {
   settingsOverlay.classList.toggle('show');
 });
 
+// Initialize notificationsEnabled from localStorage if available
+let notificationsEnabled = localStorage.getItem("notificationsEnabled");
+if (notificationsEnabled === null) {
+  notificationsEnabled = true; // default: ON
+} else {
+  notificationsEnabled = notificationsEnabled === "true"; // convert string to boolean
+}
+
+// Select the "Turn off Notifications" button
+const notificationsButton = document.getElementById("id-overlay");
+
+// Update button text on page load
+notificationsButton.textContent = notificationsEnabled
+  ? "Turn off Notifications"
+  : "Turn on Notifications";
+
+// Toggle notifications on/off
+notificationsButton.addEventListener("click", () => {
+  notificationsEnabled = !notificationsEnabled;
+
+  // Save preference in localStorage
+  localStorage.setItem("notificationsEnabled", notificationsEnabled);
+
+  // Update button text
+  notificationsButton.textContent = notificationsEnabled
+    ? "Turn off Notifications"
+    : "Turn on Notifications";
+
+  // Optional: Notify user of the change
+  showNotification(
+    notificationsEnabled
+      ? "Notifications are ON"
+      : "Notifications are OFF"
+  );
+});
+
+// Update showNotification function to respect toggle
+function showNotification(message) {
+  if (!notificationsEnabled) return; // exit if notifications are OFF
+
+  const speech = document.getElementById("petSpeech");
+  const text = document.getElementById("speechText");
+
+  if (!speech || !text) return;
+
+  text.textContent = message;
+  speech.classList.add("show");
+
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(message);
+    utter.rate = 1.1;
+    utter.pitch = 1.2;
+    speechSynthesis.speak(utter);
+  }
+
+  setTimeout(() => {
+    speech.classList.remove("show");
+  }, 5000);
+}
+
