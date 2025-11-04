@@ -275,6 +275,28 @@ background-repeat: no-repeat;
     .feeding-content {
       font-size: 11px;
     }
+
+
+.delete-activity {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  transition: 0.2s ease;
+}
+
+.delete-activity:hover {
+  background: darkred;
+  transform: scale(1.1);
+}
+
+
     
   .stats-overlay {
   position: absolute;
@@ -516,7 +538,7 @@ background: rgba(255, 225, 255, 0.95)
   display:flex;
   flex-direction:column;
   align-content:center;
-  background-color:rgb(68, 169, 212) ;
+  background-color:rgb(37, 77, 143) ;
   border-radius: 10px;
   padding:20px;
 }
@@ -562,7 +584,7 @@ padding:150px
   .about-backout {
 display:flex;
   }
-  
+ 
     .backhome-settings {
   display:flex;
   align-items:center;
@@ -579,6 +601,7 @@ justify-content:center;
 }
 
 
+
   .about {
     display:flex;
     background-image: url(Images/image\ 17.png);
@@ -590,6 +613,89 @@ h1 {
   display: flex;
  }
 
+ .add-event-btn,
+ .add-activity-btn {
+  margin-top: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-family: 'Pixelify Sans', sans-serif;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-event-btn:hover,
+.add-activity-btn:hover {
+  background-color: #45a049;
+}
+
+.add-event-form,
+.add-event-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-event-form input,
+.add-activity-form input {
+  padding: 6px;
+  border-radius: 8px;
+  border: 2px solid black;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.save-event,
+.save-activity {
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.save-event:hover,
+.save-activity:hover {
+  background-color: #0b7dda;
+}
+
+
+.event-card {
+  position: relative;
+  background: #fff;
+  border: 3px solid black;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 8px 0;
+  text-align: center;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: darkred;
+  transform: scale(1.1);
+}
 
 .help-page {
   display:flex;
@@ -1360,27 +1466,6 @@ justify-content:center;
   background-color: #ff9f43;
   height: 100%;
   transition: width 0.4s ease;
-}
-
-
-.special-add {
-  all: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #3d64c2;
-  color: white;
-  font-size: 14px;
-  border-radius: 10px;
-  padding: 6px;
-  text-align: center;
-  margin-top: 5px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 2px #1c2e70;
-}
-
-.special-add:hover {
-  background-color: #5e8bff;
 }
 
 

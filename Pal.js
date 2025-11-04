@@ -202,45 +202,212 @@ function showNotification(message) {
   }, 5000);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const addEventBtn = document.getElementById("addEventBtn");
+  const addEventForm = document.getElementById("addEventForm");
+  const eventList = document.getElementById("eventList");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const mobile = window.matchMedia("(max-width: 768px)");
+  // 🔹 Load saved events from localStorage
+  let savedEvents = JSON.parse(localStorage.getItem("events") || "[]");
 
-  function handleNavBehavior() {
-    const isMobile = mobile.matches;
+  function renderEvents() {
+    eventList.innerHTML = ""; // clear existing
+    savedEvents.forEach((event, index) => {
+      const card = document.createElement("div");
+      card.classList.add("event-card");
+      card.innerHTML = `
+        <img src="${event.image}" alt="Event Image">
+        <p>${event.name}</p>
+        <p>${event.time}<br>${event.date}</p>
+        <button class="delete-btn" data-index="${index}">✖</button>
+      `;
+      eventList.appendChild(card);
+    });
 
-    // Select navbar items
-    const activity = document.querySelector(".activity-icon");
-    const special = document.querySelector(".special-icon");
-    const stats = document.querySelector(".stats-icon");
-    const gear = document.querySelector(".gear-icon");
-
-    if (isMobile) {
-      // MOBILE MODE — make icons link to pages
-      activity.onclick = () => (window.location.href = "activities.html");
-      special.onclick = () => (window.location.href = "special.needs.html");
-      stats.onclick = () => (window.location.href = "stats.html");
-      gear.onclick = () => (window.location.href = "settings.html");
-
-      // Hide overlays on mobile
-      document.querySelectorAll(".activity-overlay, .special-overlay, .stats-overlay, #settingsOverlay")
-        .forEach(el => el.style.display = "none");
-    } else {
-      // DESKTOP MODE — overlays behave normally
-      activity.onclick = null;
-      special.onclick = null;
-      stats.onclick = null;
-      gear.onclick = null;
-
-      // You can restore hover/overlay behavior if you use JS toggles
-      document.querySelectorAll(".activity-overlay, .special-overlay, .stats-overlay, #settingsOverlay")
-        .forEach(el => el.style.display = "");
-    }
+    // Add delete button handlers
+    document.querySelectorAll(".delete-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const index = e.target.getAttribute("data-index");
+        deleteEvent(index);
+      });
+    });
   }
 
-  // Run on load and whenever screen resizes
-  handleNavBehavior();
-  mobile.addEventListener("change", handleNavBehavior);
+  function deleteEvent(index) {
+    savedEvents.splice(index, 1); // remove from array
+    localStorage.setItem("events", JSON.stringify(savedEvents));
+    renderEvents(); // re-render UI
+  }
+
+  // 🔹 Show/hide form
+  addEventBtn.addEventListener("click", () => {
+    addEventForm.style.display =
+      addEventForm.style.display === "none" ? "flex" : "none";
+  });
+
+  // 🔹 Handle add form submission
+  addEventForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("eventName").value.trim();
+    const time = document.getElementById("eventTime").value;
+    const date = document.getElementById("eventDate").value;
+    const image = document.getElementById("eventImage").value || "images/default.png";
+
+    if (!name || !time || !date) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Save event
+    const newEvent = { name, time, date, image };
+    savedEvents.push(newEvent);
+    localStorage.setItem("events", JSON.stringify(savedEvents));
+
+    // Reset form + re-render
+    addEventForm.reset();
+    addEventForm.style.display = "none";
+    renderEvents();
+  });
+
+  // Initial render
+  renderEvents();
 });
 
+    const inputs = document.querySelectorAll('.code-inputs input');
+      const redirectURL = ".html"; // ✅ change this to the page you want to go to
 
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll('.code-inputs input');
+  const redirectURL = "Home.html"; // ✅ Change to your real destination
+
+  if (!inputs.length) return; // prevent errors if no code inputs exist
+
+  inputs.forEach((input, index) => {
+    input.setAttribute("maxlength", "1"); // ensure only one digit allowed
+
+    input.addEventListener("input", (e) => {
+      // Only allow numeric input
+      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+
+      // Move to next input automatically
+      if (e.target.value && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+
+      // When all inputs are filled, redirect
+      const code = Array.from(inputs).map(i => i.value).join("");
+      if (code.length === inputs.length) {
+        console.log("Entered code:", code);
+        // Small delay to make it feel smoother
+        setTimeout(() => {
+          window.location.href = redirectURL;
+        }, 300);
+      }
+    });
+
+    // Move back with Backspace
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && input.value === "" && index > 0) {
+        inputs[index - 1].focus();
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addActivityBtn = document.getElementById("addActivityBtn");
+  const addActivityForm = document.getElementById("addActivityForm");
+  const activityList = document.getElementById("activityList");
+
+  if (!addActivityBtn || !addActivityForm || !activityList) return; // skip if not on this page
+
+  // Load saved activities
+  let savedActivities = JSON.parse(localStorage.getItem("activities") || "[]");
+
+  function renderActivities() {
+    activityList.innerHTML = "";
+    savedActivities.forEach((activity, index) => {
+      const card = document.createElement("div");
+      card.classList.add("activity-card");
+      card.innerHTML = `
+        <img src="${activity.image}" alt="Activity Image">
+        <p>${activity.name}</p>
+        <p>${activity.time}<br>${activity.date}</p>
+        <button class="delete-activity" data-index="${index}">✖</button>
+      `;
+      activityList.appendChild(card);
+    });
+
+    // Delete functionality
+    document.querySelectorAll(".delete-activity").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const index = e.target.getAttribute("data-index");
+        deleteActivity(index);
+      });
+    });
+  }
+
+  function deleteActivity(index) {
+    savedActivities.splice(index, 1);
+    localStorage.setItem("activities", JSON.stringify(savedActivities));
+    renderActivities();
+  }
+
+  // Show/hide add form
+  addActivityBtn.addEventListener("click", () => {
+    addActivityForm.style.display =
+      addActivityForm.style.display === "none" ? "flex" : "none";
+  });
+
+  // Add new activity
+  addActivityForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("activityName").value.trim();
+    const time = document.getElementById("activityTime").value;
+    const date = document.getElementById("activityDate").value;
+    const image = document.getElementById("activityImage").value || "images/default.png";
+
+    if (!name || !time || !date) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const newActivity = { name, time, date, image };
+    savedActivities.push(newActivity);
+    localStorage.setItem("activities", JSON.stringify(savedActivities));
+
+    addActivityForm.reset();
+    addActivityForm.style.display = "none";
+    renderActivities();
+  });
+
+  // Initial render
+  renderActivities();
+});
+
+function renderActivities() {
+  activityList.innerHTML = "";
+  savedActivities.forEach((activity, index) => {
+    const card = document.createElement("div");
+    card.classList.add("activity-card");
+    card.innerHTML = `
+      <img src="${activity.image}" alt="Activity Image">
+      <p>${activity.name}</p>
+      <p>${activity.time}<br>${activity.date}</p>
+      <button class="delete-activity" data-index="${index}">✖</button>
+    `;
+    activityList.appendChild(card);
+  });
+
+  // Attach delete functionality
+  document.querySelectorAll(".delete-activity").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const index = e.target.getAttribute("data-index");
+      savedActivities.splice(index, 1);
+      localStorage.setItem("activities", JSON.stringify(savedActivities));
+      renderActivities();
+    });
+  });
+}

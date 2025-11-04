@@ -1,188 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="PP.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  <title>Wellnesti</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="PP.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <title>Welcome to Wellnesti!</title>
+  </head>
+  <body class="welcome">
+      <h1>Welcome to <br> Wellnesti!</h1>
+      <p>Your pet's cozy digital nest for care, love, and level-ups!</p>
 
-<body class="home">
-  <header>
-    <nav class="navbar">
-      <ul class="list">
-        <li class="newpet"><a href="add.new.html"><img src="Images/image 6.png"></a></li>
-        <li class="activity">
-          <img src="Images/ball.png" class="activity-icon">
-        
-          <div class="activity-overlay">
-            <div class="activity-container">
-              <h2 class="activity-title">Today's Activities</h2>
-        
-        
-              <section class="feeding-parent">
-                <h3>Feeding</h3>
-                <section class="feeding-content">
-                  <img src="Images/blue-bowl-pet-food-pixel-260nw-1963476142-removebg-preview 3 (1).png">
-                  <p>10:00 A.M.</p>
-                  <img src="Images/blue-bowl-pet-food-pixel-260nw-1963476142-removebg-preview 3 (1).png">
-                  <p>1:00 P.M.</p>
-                  <img src="Images/blue-bowl-pet-food-pixel-260nw-1963476142-removebg-preview 3 (1).png">
-                  <p>6:00 P.M.</p>
-                </section>
-              </section>
-        
-        
-              <section class="exercise-parent">
-                <h3>Exercise</h3>
-                <section class="exercise-content">
-                  <p>2 Miles</p>
-                  <p>10:00 P.M.</p>
-                  <p>2 Hours</p>
-                  <p>5:00 P.M.</p>
-                </section>
-              </section>
-        
-        
-              <section class="medication-parent">
-                <h3>Medication</h3>
-                <section class="medication-content">
-                  <section class="medication-times">
-                    <img class="pill-img" src="Images/pill.png">
-                    <p>10:00 A.M.</p>
-                  </section>
-                  <section class="medication-times">
-                    <img class="pill-img" src="Images/pill.png">
-                    <p>1:00 P.M.</p>
-                  </section>
-                  <section class="medication-times">
-                    <img class="pill-img" src="Images/pill.png">
-                    <p>6:00 P.M.</p>
-                  </section>
-                </section>
-              </section>
-        
-        
-              <section class="waste-parent">
-                <h3>Waste Disposal</h3>
-                <section class="waste-content">
-                  <section class="img-time-column">
-                    <p>10:30 A.M.</p>
-                    <img class="waste-img" src="Images/a31a2d5d0dfb5c98ac6abcefba126259d3094311.png">
-                  </section>
-                  <section class="img-time-column">
-                    <p>1:30 P.M.</p>
-                    <img class="waste-img" src="Images/a31a2d5d0dfb5c98ac6abcefba126259d3094311.png">
-                  </section>
-                  <section class="img-time-column">
-                    <p>6:30 P.M.</p>
-                    <img class="waste-img" src="Images/a31a2d5d0dfb5c98ac6abcefba126259d3094311.png">
-                  </section>
-                </section>
-              </section>
-        
-            </div>
-          </div>
-        </li>
+    <section class="buttons">
+      <a href="index.html">
+        <img src="images/Google.png" alt="Sign in with Google">
+      </a>
 
-        <li class="special"><img src="images/pill.png" class="special-icon" alt="Special Needs Icon">
-          <div class="special-overlay">
-            <div class="special-container">
-              <h2 class="special-title">Becuase your pet is a german shepard, it especially needs...</h2>
-        
-              <div class="special-content">
-                <div class="special-card">
-                </div>
-        
-                <div class="special-card">
-                </div>
+      <button onclick="window.location.href='signin.html'">Sign in with E-mail</button>
 
-                <h3>Events</h3>
-                <div class="event-card">
-                  <img src="images/Vet.png">
-                  <P> Dr. Ewbank<br> checkup</P>
-                  <P>
-                    4 PM,<br> October 4th
-                  </P>
-                </div>
-        
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+      <a href="index.html">
+        <img src="images/Apple.png" alt="Sign in with Apple">
+      </a>
 
-
-    <li class="stats"><img src="images/stats.png" class="stats-icon"></a>
-      <div class="stats-overlay">
-        <h3 style="text-align:center; margin:0;"> Pet Mileage </h3>
-        <div class="graph">
-          <div class="bar-container">
-            <div class="bar" style="height: 150px;">15</div>
-            <div class="label">Dog</div>
-          </div>
-          <div class="bar-container">
-            <div class="bar" style="height: 100px;">10</div>
-            <div class="label">Cat</div>
-          </div>
-          <div class="bar-container">
-            <div class="bar" style="height: 60px;">6</div>
-            <div class="label">Rabbit</div>
-          </div>
-          <div class="bar-container">
-            <div class="bar" style="height: 200px;">20</div>
-            <div class="label">Horse</div>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-    <li class="settings">
-      <img src="images/gear.png" class="gear-icon" alt="Settings">
-    </li>
-    <section class="overlay" id="settingsOverlay">
-  <img src="Images/Setting-image.png" alt="Settings Background" class="settings-bg">
-
-
-      <ul class="overlay-content">
-        <li><a href="account.html" class="overlay-item" id="account-overlay">Account</a></li>
-        <li><a href="settings.html" class="overlay-item" id="settings-overlay">Settings</a></li>
-        <li><a href="about.html" class="overlay-item" id="about-overlay">About</a></li>
-        <li><a href="feedback.html" class="overlay-item" id="support-overlay">Support <br>/ Feedback</a></li>
-        <li><a href="policy.html" class="overlay-item" id="policy-overlay">Privacy Policy</a></li>
-        <li><a href="faq.html" class="overlay-item" id="help-overlay">Help</a></li>
-        <li><option class="overlay-item" id="id-overlay">Turn off Notifications</option></li>
-        <li><a href="logout.html" class="logout-btn" id="logout-overlay">Log Out</a></li>
-      </ul>``````````````````````````````````````````````
+      <p>Don't have an account? 
+        <a href="signup.html" class="sign">Sign Up</a>
+      </p>
     </section>
-      </ul>
-    </nav>
-  </header>
 
-  
-
-      <section class="Pet-wrapper" id="petSpeech">
-        <p>Welcome back! Your pet missed you!</p>
-      </section>
-    
-
-  <section class="hero">
-    <img class="pet" src="Images/daisy.png" alt="Your pet Here">
-  </section>
-
-
-  
-
-  </section>
-  <footer>
-    <section class="view-all-pets">
-      <a class=view-all href="all.html"><img src="images/View.png" alt="See All Pets"></a>
-    </section>
-  </footer>
-    <script src="Pal.js"></script>
-
-
-</body>
+    <footer>
+      <small>© 2025 CART / Nate & Randy</small>
+    </footer>
+  </body>
 </html>
