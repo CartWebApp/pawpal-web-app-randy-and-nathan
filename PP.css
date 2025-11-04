@@ -405,22 +405,13 @@ background-repeat: no-repeat;
   justify-content: center;
 }
 
-.settings::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -100px; 
-  width: 30px;
-  height: 100%;
-  background: transparent;
-}
 
 .overlay {
   position: fixed;
   top: 0;
   right: -480px; 
   width: 374.07px;
-  height: 931px;
+  height: 931px;;
   align-items: center;
   justify-content: flex-start;
   z-index: 9999;
@@ -523,7 +514,22 @@ background: rgba(255, 225, 255, 0.95)
   font-family: "Pixelify Sans", sans-serif;
   transition: transform 0.2s ease, background 0.2s ease;
 }
+
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  font-size: 22px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: "Pixelify Sans", sans-serif;
+}
 /* settings widget end */
+
 
 .activities {
   background-image: url(Images/image\ 5.png);

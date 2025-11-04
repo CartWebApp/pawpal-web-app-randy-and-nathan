@@ -327,6 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const addActivityBtn = document.getElementById("addActivityBtn");
   const addActivityForm = document.getElementById("addActivityForm");
