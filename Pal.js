@@ -400,3 +400,12 @@ document.addEventListener("DOMContentLoaded", () => {
   renderActivities();
 });
 
+//pet selection.js//
+const track = document.getElementById('petTrack');
+    const items = Array.from(track.children);
+
+    // Clone items until we fill twice the width for a smooth infinite loop
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      track.appendChild(clone);
+    });

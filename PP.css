@@ -13,12 +13,49 @@ a.hover {
 .hero {
 display: flex;
 justify-content: center;
-align-items: flex-end;
+align-items: center;
 }
+
 .hero img {
-  width: 150px;
+  width: 300px;
   height: auto;
 } 
+
+body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .scroll-pets {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .scroll-track {
+      display: flex;
+      gap: 15px;
+      animation: scroll 15s linear infinite;
+    }
+
+    .scroll-track li {
+      list-style: none;
+    }
+
+    .scroll-track img {
+      height: 150px;
+      width: auto;
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-80%);
+      }
+    }
+
 p {
   display:flex;
   flex-direction:row;
@@ -59,11 +96,24 @@ p {
     margin: 0;                   
     color: white; 
   }
+
+  .speech-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
-  .Pet-wrapper {
+.speech {
+  display:flex;
   background-image: url(Images/bubbles-removebg-preview\ 1.png);
   background-repeat: no-repeat;
-  }
+  background-position: center;
+  background-size:contain;
+  padding: 125px;
+  font-size:x-large;
+}
+
+
 
 .buttons {
   display: flex;
@@ -177,9 +227,9 @@ background-repeat: no-repeat;
     overflow: visible;
     position: relative;
     background-image: url(Images/navbar.png);
-    background-position: center center;
+    background-position:center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     z-index:100;
 }
 
@@ -197,7 +247,7 @@ background-repeat: no-repeat;
     .stats {
       position: relative;
       cursor: pointer;
-      z-index: 101;
+      z-index: 1100;
     }
 
     .stats-icon {
@@ -249,17 +299,6 @@ background-repeat: no-repeat;
     
     .activity-container section {
       margin-bottom: 10px;
-    }
-    
-    .activity-content, 
-    .feeding-content, 
-    .exercise-content, 
-    .medication-content, 
-    .waste-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      height: 80px;
     }
     
     .activity-container img {
@@ -542,21 +581,19 @@ background: rgba(255, 225, 255, 0.95)
 .medication-parent,
 .waste-parent{
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
+  justify-content:space-around;
   align-content:center;
-  background-color:rgb(37, 77, 143) ;
+  background-color:rgb(56, 158, 218) ;
   border-radius: 10px;
   padding:20px;
 }
 
-.feeding-content, 
-.exercise-content,
-.medication-content, 
-.waste-content {
+.column {
   display:flex;
-  flex-direction:row;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction:column;
+  align-items:center;
+  margin-right: 50px;
 }
 
 .waste-img {
@@ -711,7 +748,6 @@ h1 {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   background-size:cover;
-  background-repeat:no-repeat;
 }
 
 .back-btn {
@@ -936,14 +972,6 @@ body.log {
   background-size: cover;
 }
 
-.settings-continued {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  background-repeat: no-repeat;
-  flex-wrap: wrap;
-}
-
 
 .logout {
   background-color: red;
@@ -982,22 +1010,24 @@ height:max-content;
  padding-right:50px;
 }
 
-.accountsetting, 
-.aboutsetting, 
- .help{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  background-image: url(Images/desc.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  flex-wrap: wrap;
-  font-size: 50px;
-  background-position: center;
-  background-size: contain;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+.accountsetting,
+  .aboutsetting,
+  .support,
+  .privacy, 
+  .help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 50px 0;
+    background-image: url("Images/desc.png");
+    font-size:xx-large;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: black;
+  }
 
 .Policy {
   display:flex;
@@ -1160,6 +1190,9 @@ justify-content:center;
   background-image: url(Images/desc.png);
   background-position: center;
   background-repeat: no-repeat;
+  width:400px;
+  height:50px;
+  font-size:large;
 }
 
 #thankYouMessage {
@@ -1277,12 +1310,12 @@ justify-content:center;
   }
 
 .settings {
-    width: 150px;
+    width: 125px;
     padding-top: 30px;
   }
 
 .stats {
-    width: 80px;
+    width: 60px;
     height: 100px;
     padding-top:20px;
   }
