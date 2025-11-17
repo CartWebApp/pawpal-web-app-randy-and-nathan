@@ -23,7 +23,8 @@ align-items: center;
 
 body {
       margin: 0;
-      overflow: hidden;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .scroll-pets {
@@ -969,7 +970,7 @@ body.log {
 
 .hero-settings{
   background-image: url(Images/image\ 17.png);
-  background-size: cover;
+  background-size:cover;
 }
 
 
@@ -1282,10 +1283,6 @@ justify-content:center;
  background-position: center;
  padding-left:50px;
  padding-right:50px;
-}
-
-.body {
-  overflow-x: scroll;
 }
 
 .feedbackinfo {
