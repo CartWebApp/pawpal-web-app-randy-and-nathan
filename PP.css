@@ -100,18 +100,17 @@ p {
 
   .speech-center {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-.speech {
-  display:flex;
-  background-image: url(Images/bubbles-removebg-preview\ 1.png);
+  justify-content: center;
+    background-image: url(Images/bubbles-removebg-preview\ 1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size:contain;
-  padding: 125px;
-  font-size:x-large;
+  padding: 100px;
+  }
+  
+.speech {
+font-size:x-large;
+padding-bottom: 30px;
 }
 
 
@@ -1314,7 +1313,18 @@ justify-content:center;
 .stats {
     width: 60px;
     height: 100px;
-    padding-top:20px;
+    padding-top:10px;
+  }
+
+  .stats-icon {
+    width: 60px;
+    height: 100px;
+    transition: 0.3s ease;
+    margin-left:10px
+  }
+
+  .stats-icon:hover {
+    transform: scale(1.0);
   }
 
   .newpet {
@@ -1324,23 +1334,10 @@ justify-content:center;
   }
 
   .special {
-    size:100px;
     width: 80px;
-    height: 90px;
-    margin-right:15px;
+    height: 100px;
     padding-top:20px
   }
-
-  .stats-icon {
-      width: 65px;
-      height: 105px;
-      transition: 0.3s ease;
-      margin-left:10px
-    }
-
-    .stats-icon:hover {
-      transform: scale(1.0);
-    }
 
 .navbar ul {
   overflow: visible;
