@@ -409,3 +409,5 @@ const track = document.getElementById('petTrack');
       const clone = item.cloneNode(true);
       track.appendChild(clone);
     });
+
+    //Add events/activities//

@@ -21,31 +21,50 @@ align-items: center;
   height: auto;
 } 
 
+body.home {
+  background: url(images/image\ 5.png)no-repeat center / cover;
+}
+
 body {
       margin: 0;
       overflow-y: auto;
       overflow-x: hidden;
     }
 
-    .scroll-pets {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
+    body.pets {
+      background: url(images/image\ 5.png)no-repeat center / cover;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
     }
 
     .scroll-track {
       display: flex;
-      gap: 15px;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: nowrap;
       animation: scroll 15s linear infinite;
+    padding: 10px;
     }
 
     .scroll-track li {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
       list-style: none;
+      background-color:#f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
     }
 
     .scroll-track img {
-      height: 150px;
+      height: 200px;
       width: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
 
     @keyframes scroll {
@@ -205,11 +224,6 @@ footer {
   justify-content: center;
   align-items: flex-end;
 }
-
-  body.home,
-  body.pets {
-    background: url(images/image\ 5.png)no-repeat center / cover;
-  }
 
   .privacy {
    background-image: url(Images/image\ 12.png) url(images/image\ 13.png);
@@ -761,6 +775,7 @@ h1 {
 
 .back-btn {
   display:flex;
+  justify-content: center;
   align-items:center;
   padding-left:30px;
  background-image: url(Images/back.png);
@@ -1080,22 +1095,6 @@ flex-wrap:wrap;
 justify-content: center;
 }
 
-.needs{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content: space-between;
-  background-color: rgb(77, 132, 203);
-}
-
-.events {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content: space-between;
-  background-color: rgb(77, 132, 203);
-}
-
 .add-new {
   display:flex;
   justify-content: center;
@@ -1116,6 +1115,106 @@ justify-content: center;
 }
 
 .add-event:hover {
+  background: #1c9feb;
+  transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 330px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.modal-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.activity-buttons {
+  margin-top: 8px;
+}
+
+.activity-buttons button {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  margin-right: 5px;
+}
+
+.edit-btn {
+  background-color: #ffd966;
+}
+
+.delete-btn {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #ffcd4f;
+}
+
+.delete-btn:hover {
+  background-color: #ff5252;
+}
+
+.activity-list li {
+  background: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.add-activities {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.add-activity {
+  background: #3174cc;
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 16px;
+  font-family: "Pixelify Sans", sans-serif;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.add-activity:hover {
   background: #1c9feb;
   transform: scale(1.05);
 }
@@ -1155,6 +1254,8 @@ justify-content:center;
 }
 
 .mileage {
+  display:flex;
+  justify-content: center;
   background-image: url(Images/desc.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -1163,12 +1264,22 @@ justify-content:center;
   margin-top: 20px;
 }
 
+.stats-column{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .graphtitle {
+ text-align: center;
+ height: 30px;
+  margin:0;
   font-size: 25px;
   background-color:#1c9feb;
   border-radius: 10px;
   padding:10px;
   margin-bottom: 10px;
+  width: 500px;
 }
 
 .label {

@@ -22,27 +22,31 @@
              </ul>
         </nav>
     </header>
-
-        </nav>
-        <section class="needs">
-        <p>Because your pet is a golden retreiver, they especially need:</p>
-        <ul>
-            <li class="special-needs">A spacious yard, since they are medium sized but more importantly, they are very active</li>
-                <li class="special-needs">Patience, since they are attention seekers</li>
-                    </section>
-                </ul>
-                <br>
-                    <section class="events">
-                  <p>Events</p>
-                        <br>
-                        <p>Dr.Ewbank Checkup</p>
-                        <p>June 15, 2024 at 3:00 PM</p>
-                        <img src="Images/Vet.png" alt="pill">
-                        </section>
                         <section class="add-new">
                         <button class="add-event">Add Event</button>
                         </section>
-                        <script src="Pal.js"></script>
-</body>
-</html>
+                        <div id="modalOverlay" class="modal-overlay hidden">
+                            <div class="modal">
+                              <h2>New Activity</h2>
                         
+                              <form id="activityForm">
+                                <label>Activity Type</label>
+                                <input id="activityType" placeholder="Walk, Feeding, Vet Visit..." required />
+                        
+                                <label>Date</label>
+                                <input id="activityDate" type="date" required />
+                        
+                                <label>Notes</label>
+                                <textarea id="activityNotes" placeholder="Optional"></textarea>
+                        
+                                <div class="modal-buttons">
+                                  <button type="submit">Add Activity</button>
+                                  <button type="button" id="closeModalBtn">Cancel</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                          <ul id="activityList" class="activity-list"></ul>
+                          <script src="Pal.js"></script>
+</body>
+</html>        
