@@ -18,13 +18,15 @@
                 <li class="activity"><a href=activities.html><img src="Images/ball.png" class="activity-icon"></a></li>
                 <li class="special"><a href=special.needs.html><img src="images/pill.png" class="special-icon" alt="Special Needs Icon"></a></li>
                 <li class="stats"><a href="stats.html"><img src="images/stats.png" class="stats-icon"></a></li>
-                <li class="settings"><a href=settings.html><img src="images/gear.png" class="gear-icon" alt="Settings"></a></li>
+                <li class="settings"><a href="settings.html"><img src="images/gear.png" class="gear-icon" alt="Settings"></a></li>
              </ul>
         </nav>
     </header>
-                        <section class="add-new">
-                        <button class="add-event">Add Event</button>
-                        </section>
+    <section class="add-activities">
+      <input class="activity-input" placeholder="Activity Here (e.g. Vet, Medication, etc.)" id="Activity-TypeA" required>
+      <input class="activity-date" placeholder="Date Here (e.g. January 17, etc.)" id="Date-TypeA" required>
+      <button class="add-activity" id="addActivityBtn">Add New Activity</button>
+    </section>
                         <div id="modalOverlay" class="modal-overlay hidden">
                             <div class="modal">
                               <h2>New Activity</h2>
@@ -47,6 +49,6 @@
                             </div>
                           </div>
                           <ul id="activityList" class="activity-list"></ul>
-                          <script src="Pal.js"></script>
+                          <script src="events.js"></script>
 </body>
 </html>        

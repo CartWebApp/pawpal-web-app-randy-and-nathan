@@ -14,10 +14,14 @@
         <li class="activity"><a href=activities.html><img src="Images/ball.png" class="activity-icon"></a></li>
         <li class="special"><a href=special.needs.html><img src="images/pill.png" class="special-icon" alt="Special Needs Icon"></a></li>
         <li class="stats"><a href="stats.html"><img src="images/stats.png" class="stats-icon"></a></li>
-        <li class="settings"><a href=settings.html><img src="images/gear.png" class="gear-icon" alt="Settings"></a></li>
+        <li class="settings"><a href="settings.html"><img src="images/gear.png" class="gear-icon" alt="Settings"></a></li>
      </ul>
-     <section class="add-activities">
-      <button class="add-activity">Add New Activity</button>
+      <section class="add-activities">
+        <input class="activity-input" placeholder="Activity Here (e.g. Walk, Playtime, etc.)" id="Activity-TypeA" required>
+        <input class="activity-date" placeholder="Date Here (e.g. December 10, etc.)" id="Date-TypeA" required>
+        <button class="add-activity" id="addActivityBtn">Add New Activity</button>
       </section>
+      <script src="events.js"></script>
 </nav>
 </body>
+</html>

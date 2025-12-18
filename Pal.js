@@ -410,4 +410,4 @@ const track = document.getElementById('petTrack');
       track.appendChild(clone);
     });
 
-    //Add events/activities//
+    
